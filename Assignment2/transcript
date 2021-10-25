@@ -1,0 +1,73 @@
+# do init.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:36:03 on Oct 11,2021
+# vcom alu.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU
+# -- Compiling architecture Behavioural of ALU
+# End time: 12:36:03 on Oct 11,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:36:03 on Oct 11,2021
+# vlog -sv ALU_iface.sv transaction.sv generator.sv driver.sv checker.sv scoreboard.sv monitor.sv environment.sv test.sv top.sv 
+# -- Compiling interface ALU_iface
+# -- Compiling package transaction_sv_unit
+# -- Compiling package generator_sv_unit
+# ** Warning: ** while parsing file included at driver.sv(3)
+# ** at ALU_iface.sv(3): (vlog-2275) Existing interface 'ALU_iface' will be overwritten.
+# -- Compiling interface ALU_iface
+# -- Compiling package driver_sv_unit
+# -- Compiling package checker_sv_unit
+# -- Compiling package scoreboard_sv_unit
+# ** Warning: ** while parsing file included at monitor.sv(3)
+# ** at ALU_iface.sv(3): (vlog-2275) Existing interface 'ALU_iface' will be overwritten.
+# -- Compiling interface ALU_iface
+# -- Compiling package monitor_sv_unit
+# ** Warning: ** while parsing file included at environment.sv(6)
+# ** while parsing file included at driver.sv(3)
+# ** at ALU_iface.sv(3): (vlog-2275) Existing interface 'ALU_iface' will be overwritten.
+# -- Compiling package environment_sv_unit
+# -- Compiling interface ALU_iface
+# ** Warning: ** while parsing file included at test.sv(3)
+# ** at ALU_iface.sv(3): (vlog-2275) Existing interface 'ALU_iface' will be overwritten.
+# -- Compiling interface ALU_iface
+# -- Compiling package test_sv_unit
+# -- Compiling module test
+# ** Warning: ** while parsing file included at top.sv(4)
+# ** at ALU_iface.sv(3): (vlog-2275) Existing interface 'ALU_iface' will be overwritten.
+# -- Compiling interface ALU_iface
+# ** Warning: ** while parsing file included at top.sv(5)
+# ** at test.sv(6): (vlog-2275) Existing module 'test' will be overwritten.
+# -- Compiling package top_sv_unit
+# -- Compiling module test
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 12:36:04 on Oct 11,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 6
+# vsim -c -voptargs=""+acc"" top 
+# Start time: 12:36:04 on Oct 11,2021
+# Loading sv_std.std
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.ALU_iface
+# Loading work.test
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.alu(behavioural)
+# [      0 ns | DRV] I will start driving for addition
+# [SCB] Test report
+# [SCB] ------------
+# [SCB] # tests done         : 100
+# [SCB] # tests ok           : 98
+# [SCB] # tests failed       : 2
+# [SCB] # tests success rate : 98.00
+# ** Note: $finish    : scoreboard.sv(51)
+#    Time: 1085 ps  Iteration: 1  Instance: /top/tst
+# End time: 12:36:05 on Oct 11,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

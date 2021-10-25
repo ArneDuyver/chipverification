@@ -1,0 +1,416 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Arne/Documents/IIW/Chip verification/Assignment2
+Ealu
+Z1 w1633012144
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 132
+Z4 dC:/Users/Arne/Google Drive/Studie/MASTER/Sem 1/Chip Design and Verification/Labo/Assignment2
+Z5 8alu.vhd
+Z6 Falu.vhd
+l0
+L16 1
+VQz:XBjGYm?CPO8F5i^?KO1
+!s100 ]`ECcUN]c29^OIXRQi1;53
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1633948563
+!i10b 1
+Z9 !s108 1633948563.000000
+Z10 !s90 alu.vhd|
+Z11 !s107 alu.vhd|
+!i113 1
+Z12 tExplicit 1 CvgOpt 0
+Abehavioural
+R2
+R3
+DEx4 work 3 alu 0 22 Qz:XBjGYm?CPO8F5i^?KO1
+!i122 132
+l38
+L27 108
+VnQLKdUVh<aB`UjF9MzCEO1
+!s100 >dYVXNe@9gOJBXmh[gZDa1
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+YALU_iface
+Z13 !s105 top_sv_unit
+Z14 DXx4 work 11 top_sv_unit 0 22 m6jh3ZbV7z1>Le8M:;k:>0
+Z15 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z16 !s110 1633948564
+!i10b 1
+!s100 dShNCeU4C068m8MGiJh[;2
+!s11b Dg1SIo80bB@j0V0VzS_@n1
+IUg8Bbh@>0m4QGSE@ekSeS0
+Z17 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R4
+w1633352851
+8ALU_iface.sv
+Z18 FALU_iface.sv
+!i122 133
+Z19 L0 3 0
+Z20 OV;L;2020.1;71
+r1
+!s85 0
+31
+R9
+!s107 top.sv|test.sv|environment.sv|monitor.sv|scoreboard.sv|checker.sv|driver.sv|generator.sv|transaction.sv|ALU_iface.sv|
+Z21 !s90 -sv|ALU_iface.sv|transaction.sv|generator.sv|driver.sv|checker.sv|scoreboard.sv|monitor.sv|environment.sv|test.sv|top.sv|
+!i113 1
+o-sv
+Z22 tCvgOpt 0
+n@a@l@u_iface
+Xchecker_sv_unit
+R15
+R8
+Va`X`S]g`K:bbkRY2=@QVM3
+r1
+!s85 0
+!i10b 1
+!s100 icIcbI3O5_Y<W6M^4MB6g1
+Ia`X`S]g`K:bbkRY2=@QVM3
+!i103 1
+S1
+R4
+w1633948154
+8checker.sv
+Z23 Fchecker.sv
+Z24 Ftransaction.sv
+!i122 133
+R19
+R20
+31
+R9
+Z25 !s107 top.sv|test.sv|environment.sv|monitor.sv|scoreboard.sv|checker.sv|driver.sv|generator.sv|transaction.sv|ALU_iface.sv|
+R21
+!i113 1
+o-sv
+R22
+Xdriver_sv_unit
+Z26 !s115 ALU_iface
+R15
+R8
+VoE`jgg06lEJSh:NDDZRM^3
+r1
+!s85 0
+!i10b 1
+!s100 a4Bb37KdF@2BIQVYQK8Uf3
+IoE`jgg06lEJSh:NDDZRM^3
+!i103 1
+S1
+R4
+w1633948150
+8driver.sv
+Z27 Fdriver.sv
+R18
+R24
+!i122 133
+R19
+R20
+31
+R9
+R25
+R21
+!i113 1
+o-sv
+R22
+Xenvironment_sv_unit
+R26
+R15
+R8
+VBAXOTcb]eg9`X;>3g7P:@3
+r1
+!s85 0
+!i10b 1
+!s100 @aWJ4BaED0CN7h38NA<KR1
+IBAXOTcb]eg9`X;>3g7P:@3
+!i103 1
+S1
+R4
+Z28 w1633948537
+8environment.sv
+Z29 Fenvironment.sv
+R24
+Z30 Fgenerator.sv
+R27
+R18
+Z31 Fmonitor.sv
+R23
+Z32 Fscoreboard.sv
+!i122 133
+R19
+R20
+31
+R9
+R25
+R21
+!i113 1
+o-sv
+R22
+Xgenerator_sv_unit
+R15
+R8
+VL`X7R_BNd8@97]I<7O3Wm0
+r1
+!s85 0
+!i10b 1
+!s100 f5RTH]iDZALWYPD[;i:WE3
+IL`X7R_BNd8@97]I<7O3Wm0
+!i103 1
+S1
+R4
+w1633948146
+8generator.sv
+R30
+R24
+!i122 133
+R19
+R20
+31
+R9
+R25
+R21
+!i113 1
+o-sv
+R22
+Xmonitor_sv_unit
+R26
+R15
+R8
+VCRnZX]Dj^TJETVH=k`B[33
+r1
+!s85 0
+!i10b 1
+!s100 Z[5z=Nj6NJmE@7KF3LLn^3
+ICRnZX]Dj^TJETVH=k`B[33
+!i103 1
+S1
+R4
+w1633948137
+8monitor.sv
+R31
+R18
+R24
+!i122 133
+R19
+R20
+31
+R9
+R25
+R21
+!i113 1
+o-sv
+R22
+Xscoreboard_sv_unit
+R15
+R8
+V@[=X3b=D57fOaMLlOc9S=2
+r1
+!s85 0
+!i10b 1
+!s100 lP^mi8GC@Y?a5W_>mALB`3
+I@[=X3b=D57fOaMLlOc9S=2
+!i103 1
+S1
+R4
+R28
+8scoreboard.sv
+R32
+!i122 133
+R19
+R20
+31
+R9
+R25
+R21
+!i113 1
+o-sv
+R22
+vtest
+R15
+R14
+R16
+R17
+r1
+!s85 0
+!i10b 1
+!s100 Xz5^FSSPFAKDcb5iW]OHX1
+IX6D^O3FXPFCnfbRIb_f9i2
+R13
+S1
+R4
+w1633352668
+Z33 8test.sv
+Z34 Ftest.sv
+!i122 133
+L0 6 9
+R20
+31
+R9
+R25
+R21
+!i113 1
+o-sv
+R22
+Xtest_sv_unit
+R26
+R15
+R8
+VlcL9_QQIf<^e8o<X;jNV61
+r1
+!s85 0
+!i10b 1
+!s100 DRKBmDLO?m:N6Ao3mJzh21
+IlcL9_QQIf<^e8o<X;jNV61
+!i103 1
+S1
+R4
+R28
+R33
+R34
+R18
+R29
+R24
+R30
+R27
+R31
+R23
+R32
+!i122 133
+R19
+R20
+31
+R9
+R25
+R21
+!i113 1
+o-sv
+R22
+vtop
+R15
+R14
+R16
+R17
+r1
+!s85 0
+!i10b 1
+!s100 TfQ1H4oSlWF=UhiTk^U8z0
+IQ<cY^I0WD=kDjHD`0Uif]0
+R13
+S1
+R4
+w1633352647
+Z35 8top.sv
+Z36 Ftop.sv
+!i122 133
+L0 7 25
+R20
+31
+R9
+R25
+R21
+!i113 1
+o-sv
+R22
+Xtop_sv_unit
+R26
+R15
+R16
+Vm6jh3ZbV7z1>Le8M:;k:>0
+r1
+!s85 0
+!i10b 1
+!s100 AATofI;d::V2z0]Gl_EE03
+Im6jh3ZbV7z1>Le8M:;k:>0
+!i103 1
+S1
+R4
+R28
+R35
+R36
+R18
+R34
+R29
+R24
+R30
+R27
+R31
+R23
+R32
+!i122 133
+R19
+R20
+31
+R9
+R25
+R21
+!i113 1
+o-sv
+R22
+Xtransaction_sv_unit
+R15
+R8
+VKWVK8<`D6>eX>g;:UWh6g3
+r1
+!s85 0
+!i10b 1
+!s100 72Go`TNU5l0D0E^5M]^co3
+IKWVK8<`D6>eX>g;:UWh6g3
+!i103 1
+S1
+R4
+w1633352956
+8transaction.sv
+R24
+!i122 133
+R19
+R20
+31
+R9
+R25
+R21
+!i113 1
+o-sv
+R22
+Xtransactions_sv_unit
+R15
+!s110 1633352067
+VIYINOKU4hFcWBGFNNX1Nk1
+r1
+!s85 0
+!i10b 1
+!s100 KmTKM=Jjk31IiT@mchfHW2
+IIYINOKU4hFcWBGFNNX1Nk1
+!i103 1
+S1
+R0
+w1633026442
+8transactions.sv
+Ftransactions.sv
+!i122 29
+L0 1 0
+R20
+31
+!s108 1633352067.000000
+!s107 top.sv|test.sv|environment.sv|monitor.sv|driver.sv|generator.sv|transactions.sv|ALU_iface.sv|
+!s90 -sv|ALU_iface.sv|transactions.sv|generator.sv|driver.sv|monitor.sv|environment.sv|test.sv|top.sv|
+!i113 1
+o-sv
+R22

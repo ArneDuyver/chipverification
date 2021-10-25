@@ -1,0 +1,102 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Arne/Documents/IIW/Chip verification/Assignment1
+Ealu
+Z1 w1633012144
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 35
+R0
+Z4 8alu.vhd
+Z5 Falu.vhd
+l0
+L16 1
+VQz:XBjGYm?CPO8F5i^?KO1
+!s100 ]`ECcUN]c29^OIXRQi1;53
+Z6 OV;C;2020.1;71
+32
+Z7 !s110 1633025032
+!i10b 1
+Z8 !s108 1633025032.000000
+Z9 !s90 alu.vhd|
+Z10 !s107 alu.vhd|
+!i113 1
+Z11 tExplicit 1 CvgOpt 0
+Abehavioural
+R2
+R3
+DEx4 work 3 alu 0 22 Qz:XBjGYm?CPO8F5i^?KO1
+!i122 35
+l38
+L27 108
+VnQLKdUVh<aB`UjF9MzCEO1
+!s100 >dYVXNe@9gOJBXmh[gZDa1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+YALU_iface
+Z12 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z13 !s110 1633025033
+!i10b 1
+!s100 Gl88>GPXP_fLSBij8V_B?0
+Z14 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IAOcL5TQW;:U=Jfa<UnCIV1
+Z15 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1633012126
+8ALU_iface.sv
+FALU_iface.sv
+!i122 36
+L0 1 0
+Z16 OV;L;2020.1;71
+r1
+!s85 0
+31
+R8
+!s107 top.sv|ALU_iface.sv|
+Z17 !s90 -sv|ALU_iface.sv|top.sv|
+!i113 1
+o-sv
+Z18 tCvgOpt 0
+n@a@l@u_iface
+vtop
+R12
+R13
+!i10b 1
+!s100 akR^IN^3=5^JV?o=^HfdF2
+R14
+IU1C=cg0G=M3`^jO7PEO5m2
+R15
+S1
+R0
+w1633024887
+8top.sv
+Ftop.sv
+!i122 36
+L0 3 60
+R16
+r1
+!s85 0
+31
+R8
+Z19 !s107 top.sv|ALU_iface.sv|
+R17
+!i113 1
+o-sv
+R18
