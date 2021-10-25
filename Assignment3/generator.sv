@@ -99,7 +99,7 @@ class generator;
       OR : tra.updateOutcome_OR;
       CMP : tra.updateOutcome_CMP;
       default : tra.updateOutcome_ADD;
-    endcase //TODO: Why is this red??
+    endcase
   endtask : updateOutcome
   
 
