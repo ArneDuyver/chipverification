@@ -31,10 +31,10 @@ class scoreboard;
       if (result > 0)
       begin 
         no_tests_ok++; 
-        $display("[SCB] successful test registered (^_^)");
+        //$display("[SCB] successful test registered (^_^)");
       end else begin
         no_tests_nok++;
-        $display("[SCB] unsuccessful test registered");
+        //$display("[SCB] unsuccessful test registered");
 
       end
     end /* while*/
