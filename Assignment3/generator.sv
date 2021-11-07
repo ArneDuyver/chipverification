@@ -11,7 +11,7 @@ class generator;
     this.gen2che = g2e;
   endfunction : new
 
-  task runTest1();
+  task run(int testNr, int NOT);
     transaction tra;
     
     int id;
@@ -19,11 +19,11 @@ class generator;
     $display("[GEN] Starting Test 1");
     forever begin
       tra = new();
-      tra.test1.constraint_mode(1);
-      tra.test2.constraint_mode(0);
-      tra.test3.constraint_mode(0);
-      tra.test4.constraint_mode(0);
-      tra.test5.constraint_mode(0);
+      if (id<NOT) begin
+        setTest(tra,testNr);
+      end else begin
+        setTest(tra,0);
+      end
       void'(tra.randomize());
       updateOutcome(tra);
       if (id == 0) $display("[GEN] tr%d: %s", id, tra.toString());
@@ -31,7 +31,7 @@ class generator;
       this.gen2che.put(tra);
       id = id + 1;
     end /* forever*/
-  endtask : runTest1
+  endtask : run
 
   task updateOutcome(transaction tra);
     case(tra.operation)
@@ -46,6 +46,22 @@ class generator;
       default : tra.updateOutcome_ADD;
     endcase
   endtask : updateOutcome
+
+  task setTest(transaction tra, int testNr);
+    tra.test1.constraint_mode(0);
+    tra.test2.constraint_mode(0);
+    tra.test3.constraint_mode(0);
+    tra.test4.constraint_mode(0);
+    tra.test5.constraint_mode(0);
+    case(testNr)
+      1 : tra.test1.constraint_mode(1);
+      2 : tra.test2.constraint_mode(1);
+      3 : tra.test3.constraint_mode(1);
+      4 : tra.test4.constraint_mode(1);
+      5 : tra.test5.constraint_mode(1);
+      default : tra.test1.constraint_mode(0);
+    endcase
+  endtask : setTest
 
 endclass : generator
 `endif

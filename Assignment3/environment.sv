@@ -65,10 +65,7 @@ class environment;
           this.check.run();
           this.mon.run();
           this.drv.run(); 
-          case(testNr)
-            1 : gen.runTest1();
-            default : gen.runTest1();
-          endcase
+          this.gen.run(testNr,nrOfTests);
         join_none;
         //wait for some time
         repeat (10) @(posedge this.ifc.clock);
