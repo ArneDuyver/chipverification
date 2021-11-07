@@ -85,8 +85,11 @@ class generator;
       void'(tra.randomize());
       updateOutcome(tra);
       //$display("%s", tra.toString());
+      $display("1");
       this.gen2drv.put(tra);
+      $display("2");
       this.gen2che.put(tra);
+      $display("3");
     end
 
 
