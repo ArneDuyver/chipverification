@@ -23,13 +23,14 @@ class checkers;
     forever begin 
       this.mon2che.get(received_result);
       this.gen2che.get(expected_result);
-      if (expected_result.Z == received_result.Z)
       //Steekproeven om de correctheid van de testen aan te tonen
-      if(id > 50 && id < 55)begin
+      if(id > 50 && id < 55) begin
         $display("[CHE] steekproef%d, expected: %s", id, expected_result.toString());
         $display("[CHE] steekproef%d, received: %s",id, received_result.toString());
         $display("[CHE]-----------------------------------------------------------[CHE]");
       end
+      
+      if (expected_result.Z == received_result.Z)
       begin
         if (expected_result.flags_out == received_result.flags_out)
         begin
