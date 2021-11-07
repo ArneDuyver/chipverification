@@ -9,7 +9,7 @@ class monitor;
   virtual ALU_iface ifc;
   mailbox #(transaction_mon) mon2che;
 
-  function new(virtual ALU_iface ifc, mailbox #(transaction) m2c);
+  function new(virtual ALU_iface ifc, mailbox #(transaction_mon) m2c);
     this.ifc = ifc;
     this.mon2che = m2c;
   endfunction : new
@@ -33,10 +33,18 @@ class monitor;
       flags_out = this.ifc.flags_out;
       tra = new(A, B, flags_in, operation, Z, flags_out);
       if (id >= 0) $display("[MON] tr_mon%d: %s", id, tra.toString());
-      this.mon2che.put(tra);
+
+      if (check_valid(A,B,flags_in,operation) != 0)begin
+        this.mon2che.put(tra);
+      end
+
       id = id + 1;
     end /* forever */
   endtask : run
+
+  function check_valid(byte A,byte B,bit [3:0] flags_in,bit [2:0] operation);
+    return A || B || flags_in || operation;
+  endfunction : check_valid
 
 endclass : monitor
 `endif

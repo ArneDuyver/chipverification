@@ -17,7 +17,6 @@ class generator;
     int id;
     id = 0;
     $display("[GEN] Starting Test 1");
-
     forever begin
       tra = new();
       tra.test1.constraint_mode(1);

@@ -40,23 +40,39 @@ class environment;
 
   endfunction : new
 
+  task rst_env();
+    begin
+      this.gen2drv = new(5);
+      this.gen2che = new(5);
+      this.mon2che = new(5);
+      this.che2scb = new(5);
+
+      this.gen = new(this.gen2drv, this.gen2che);
+      this.drv = new(ifc, this.gen2drv);
+      this.mon = new(ifc, this.mon2che);
+
+      this.check = new(this.gen2che,this.mon2che,this.che2scb);
+      this.scb = new(this.che2scb);
+    end
+  endtask : rst_env
+
   task run(int testNr,int nrOfTests);
     fork
-      begin      
+      begin  
+        rst_env(); 
+        this.drv.rst_iface();   
         fork 
-          check.run();
-          drv.run(); 
+          this.check.run();
+          this.mon.run();
+          this.drv.run(); 
           case(testNr)
             1 : gen.runTest1();
             default : gen.runTest1();
           endcase
-          
         join_none;
         //wait for some time
         repeat (10) @(posedge this.ifc.clock);
-
         fork
-          mon.run(); 
           this.scb.run(nrOfTests);
         join_any
         //wait
