@@ -16,9 +16,9 @@ class generator;
     
     int id;
     id = 0;
-    $display("#######################");
+    $display("##############################################");
     $display("[GEN] Starting Test %d",testNr);
-    $display("#######################");
+    $display("##############################################");
 
     forever begin
       tra = new();
