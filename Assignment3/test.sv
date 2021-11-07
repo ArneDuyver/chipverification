@@ -9,9 +9,15 @@ module test (ALU_iface ifc);
   initial
   begin
     //Test1
-    env.run(1,10); //1,100*8
-    //Test1 again
-    env.run(1,5);
+    env.run(1,8*100);
+    //Test2
+    env.run(2,100);
+    //Test3
+    env.run(3,100);
+    //Test4
+    env.run(4,100);
+    //Test5
+    env.run(5,1000);
     $finish;
   end
 
