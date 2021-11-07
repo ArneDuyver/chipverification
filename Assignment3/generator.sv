@@ -1,7 +1,6 @@
 `ifndef DEF_GEN
 `define DEF_GEN
 `include "transaction.sv"
-`include "extra.h"
 
 class generator;
   mailbox #(transaction) gen2drv;
@@ -15,6 +14,7 @@ class generator;
   task run();
     transaction tra;
     // Test1
+    $display("[GEN] Starting Test 1");
     for (int i=0; i<100*8; i++) begin
       tra = new();
       tra.test1.constraint_mode(1);
@@ -23,12 +23,13 @@ class generator;
       tra.test4.constraint_mode(0);
       tra.test5.constraint_mode(0);
       void'(tra.randomize());
-      updateOutcome(transaction tra);
+      updateOutcome(tra);
       //$display("%s", tra.toString());
       this.gen2drv.put(tra);
       this.gen2che.put(tra);
     end 
     // Test2
+    $display("[GEN] Starting Test 2");
     for (int i=0; i<100; i++) begin
       tra = new();
       tra.test1.constraint_mode(0);
@@ -43,6 +44,7 @@ class generator;
       this.gen2che.put(tra);
     end
     // Test3
+    $display("[GEN] Starting Test 3");
     for (int i=0; i<100; i++) begin
       tra = new();
       tra.test1.constraint_mode(0);
@@ -57,6 +59,7 @@ class generator;
       this.gen2che.put(tra);
     end
     // Test4
+    $display("[GEN] Starting Test 4");
     for (int i=0; i<100; i++) begin
       tra = new();
       tra.test1.constraint_mode(0);
@@ -71,6 +74,7 @@ class generator;
       this.gen2che.put(tra);
     end
     // Test5
+    $display("[GEN] Starting Test 5");
     for (int i=0; i<1000; i++) begin
       tra = new();
       tra.test1.constraint_mode(0);
@@ -90,14 +94,14 @@ class generator;
 
   task updateOutcome(transaction tra);
     case(tra.operation)
-      ADD : tra.updateOutcome_ADD;
-      ADC : tra.updateOutcome_ADC;
-      SUB : tra.updateOutcome_SUB;
-      SUBC : tra.updateOutcome_SUBC;
-      AND : tra.updateOutcome_AND;
-      XOR : tra.updateOutcome_XOR;
-      OR : tra.updateOutcome_OR;
-      CMP : tra.updateOutcome_CMP;
+      0 : tra.updateOutcome_ADD;
+      1 : tra.updateOutcome_ADC;
+      2 : tra.updateOutcome_SUB;
+      3 : tra.updateOutcome_SUBC;
+      4 : tra.updateOutcome_AND;
+      5 : tra.updateOutcome_XOR;
+      6 : tra.updateOutcome_OR;
+      7 : tra.updateOutcome_CMP;
       default : tra.updateOutcome_ADD;
     endcase
   endtask : updateOutcome

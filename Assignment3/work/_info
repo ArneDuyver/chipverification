@@ -14,8 +14,8 @@ Ealu
 Z1 w1633012144
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 132
-Z4 dC:/Users/Arne/Google Drive/Studie/MASTER/Sem 1/Chip Design and Verification/Labo/Assignment2
+!i122 148
+Z4 dC:/Git/IIW/LaboChip/Assignment3
 Z5 8alu.vhd
 Z6 Falu.vhd
 l0
@@ -24,9 +24,9 @@ VQz:XBjGYm?CPO8F5i^?KO1
 !s100 ]`ECcUN]c29^OIXRQi1;53
 Z7 OV;C;2020.1;71
 32
-Z8 !s110 1633948563
+Z8 !s110 1636286037
 !i10b 1
-Z9 !s108 1633948563.000000
+Z9 !s108 1636286037.000000
 Z10 !s90 alu.vhd|
 Z11 !s107 alu.vhd|
 !i113 1
@@ -35,7 +35,7 @@ Abehavioural
 R2
 R3
 DEx4 work 3 alu 0 22 Qz:XBjGYm?CPO8F5i^?KO1
-!i122 132
+!i122 148
 l38
 L27 108
 VnQLKdUVh<aB`UjF9MzCEO1
@@ -51,9 +51,9 @@ R11
 R12
 YALU_iface
 Z13 !s105 top_sv_unit
-Z14 DXx4 work 11 top_sv_unit 0 22 m6jh3ZbV7z1>Le8M:;k:>0
+Z14 DXx4 work 11 top_sv_unit 0 22 L98=]23hAVFl2XoLa[WF:3
 Z15 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z16 !s110 1633948564
+Z16 !s110 1636286883
 !i10b 1
 !s100 dShNCeU4C068m8MGiJh[;2
 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -64,109 +64,111 @@ R4
 w1633352851
 8ALU_iface.sv
 Z18 FALU_iface.sv
-!i122 133
+!i122 168
 Z19 L0 3 0
 Z20 OV;L;2020.1;71
 r1
 !s85 0
 31
-R9
-Z21 !s107 top.sv|test.sv|environment.sv|monitor.sv|scoreboard.sv|checker.sv|driver.sv|generator.sv|transaction.sv|ALU_iface.sv|
-Z22 !s90 -sv|ALU_iface.sv|transaction.sv|generator.sv|driver.sv|checker.sv|scoreboard.sv|monitor.sv|environment.sv|test.sv|top.sv|
+Z21 !s108 1636286883.000000
+!s107 scoreboard.sv|checker.sv|monitor.sv|driver.sv|generator.sv|transaction_mon.sv|transaction.sv|environment.sv|test.sv|ALU_iface.sv|top.sv|
+Z22 !s90 -sv|top.sv|
 !i113 1
 o-sv
 Z23 tCvgOpt 0
 n@a@l@u_iface
 Xchecker_sv_unit
 R15
-R8
-Va`X`S]g`K:bbkRY2=@QVM3
+!s110 1636286630
+V>7DlVTS^^D52[6XbJY=MT0
 r1
 !s85 0
 !i10b 1
-!s100 icIcbI3O5_Y<W6M^4MB6g1
-Ia`X`S]g`K:bbkRY2=@QVM3
+!s100 >jODWnE4VXI?jS=VFbFVh2
+I>7DlVTS^^D52[6XbJY=MT0
 !i103 1
 S1
 R4
-w1633948154
+w1636286628
 8checker.sv
 Z24 Fchecker.sv
 Z25 Ftransaction.sv
-!i122 133
+Z26 Ftransaction_mon.sv
+!i122 160
 R19
 R20
 31
-R9
-R21
-R22
+!s108 1636286630.000000
+!s107 transaction_mon.sv|transaction.sv|checker.sv|
+!s90 -sv|checker.sv|
 !i113 1
 o-sv
 R23
 Xdriver_sv_unit
-Z26 !s115 ALU_iface
+Z27 !s115 ALU_iface
 R15
-R8
-VoE`jgg06lEJSh:NDDZRM^3
+!s110 1636286595
+VV`1GZznKRFJhXV9VT:g3L1
 r1
 !s85 0
 !i10b 1
-!s100 a4Bb37KdF@2BIQVYQK8Uf3
-IoE`jgg06lEJSh:NDDZRM^3
+!s100 Z:PKiQ[VS`E:6z;idH>N31
+IV`1GZznKRFJhXV9VT:g3L1
 !i103 1
 S1
 R4
-w1633948150
+Z28 w1636286299
 8driver.sv
-Z27 Fdriver.sv
+Z29 Fdriver.sv
 R18
 R25
-!i122 133
+!i122 159
 R19
 R20
 31
-R9
-R21
-R22
+!s108 1636286595.000000
+!s107 transaction.sv|ALU_iface.sv|driver.sv|
+!s90 -sv|driver.sv|
 !i113 1
 o-sv
 R23
 Xenvironment_sv_unit
-R26
+R27
 R15
-R8
-VBAXOTcb]eg9`X;>3g7P:@3
+!s110 1636286852
+V85:_7Ah4d:8IMk4TMh;ed2
 r1
 !s85 0
 !i10b 1
-!s100 @aWJ4BaED0CN7h38NA<KR1
-IBAXOTcb]eg9`X;>3g7P:@3
+!s100 EV]NmY045J[Mn`05?I0S[0
+I85:_7Ah4d:8IMk4TMh;ed2
 !i103 1
 S1
 R4
-Z28 w1633948537
+Z30 w1636286850
 8environment.sv
-Z29 Fenvironment.sv
+Z31 Fenvironment.sv
 R25
-Z30 Fgenerator.sv
-R27
+R26
+Z32 Fgenerator.sv
+R29
 R18
-Z31 Fmonitor.sv
+Z33 Fmonitor.sv
 R24
-Z32 Fscoreboard.sv
-!i122 133
+Z34 Fscoreboard.sv
+!i122 166
 R19
 R20
 31
-R9
-R21
-R22
+!s108 1636286852.000000
+!s107 scoreboard.sv|checker.sv|monitor.sv|ALU_iface.sv|driver.sv|generator.sv|transaction_mon.sv|transaction.sv|environment.sv|
+!s90 -sv|environment.sv|
 !i113 1
 o-sv
 R23
 Xexercise1_sv_unit
 R15
-Z33 !s110 1633949719
+!s110 1633949719
 VaU4>]UF34iKfJf=OTE`9I3
 r1
 !s85 0
@@ -175,156 +177,158 @@ r1
 IaU4>]UF34iKfJf=OTE`9I3
 !i103 1
 S1
-Z34 dC:/Users/Arne/Google Drive/Studie/MASTER/Sem 1/Chip Design and Verification/Labo/Assignment3
-Z35 w1633949708
-Z36 8exercise1.sv
-Z37 Fexercise1.sv
+dC:/Users/Arne/Google Drive/Studie/MASTER/Sem 1/Chip Design and Verification/Labo/Assignment3
+w1633949708
+8exercise1.sv
+Fexercise1.sv
 !i122 135
 L0 4 0
 R20
 31
-Z38 !s108 1633949719.000000
-Z39 !s107 exercise1.sv|
-Z40 !s90 -sv|exercise1.sv|
+!s108 1633949719.000000
+!s107 exercise1.sv|
+!s90 -sv|exercise1.sv|
 !i113 1
 o-sv
 R23
 Xgenerator_sv_unit
 R15
-R8
-VL`X7R_BNd8@97]I<7O3Wm0
+!s110 1636286589
+VX400gF<YF]FEkJ^RJ`J7i2
 r1
 !s85 0
 !i10b 1
-!s100 f5RTH]iDZALWYPD[;i:WE3
-IL`X7R_BNd8@97]I<7O3Wm0
+!s100 M`IWlj1;97:7Z2oVMcF_T3
+IX400gF<YF]FEkJ^RJ`J7i2
 !i103 1
 S1
 R4
-w1633948146
+R28
 8generator.sv
-R30
+R32
 R25
-!i122 133
+!i122 158
 R19
 R20
 31
-R9
-R21
-R22
+!s108 1636286589.000000
+!s107 transaction.sv|generator.sv|
+!s90 -sv|generator.sv|
 !i113 1
 o-sv
 R23
 Xmonitor_sv_unit
-R26
+R27
 R15
-R8
-VCRnZX]Dj^TJETVH=k`B[33
+!s110 1636286793
+VOh3m<1kIa3UPJ5ZHeW8fO3
 r1
 !s85 0
 !i10b 1
-!s100 Z[5z=Nj6NJmE@7KF3LLn^3
-ICRnZX]Dj^TJETVH=k`B[33
+!s100 1JTNzYZTZhN>2fiKhdNVM2
+IOh3m<1kIa3UPJ5ZHeW8fO3
 !i103 1
 S1
 R4
-w1633948137
+w1636286789
 8monitor.sv
-R31
+R33
 R18
 R25
-!i122 133
+R26
+!i122 163
 R19
 R20
 31
-R9
-R21
-R22
+!s108 1636286792.000000
+!s107 transaction_mon.sv|transaction.sv|ALU_iface.sv|monitor.sv|
+!s90 -sv|monitor.sv|
 !i113 1
 o-sv
 R23
 Xscoreboard_sv_unit
 R15
-R8
-V@[=X3b=D57fOaMLlOc9S=2
+!s110 1636286642
+VYiF2`Y:1XLOB=YlUoHbhg2
 r1
 !s85 0
 !i10b 1
-!s100 lP^mi8GC@Y?a5W_>mALB`3
-I@[=X3b=D57fOaMLlOc9S=2
+!s100 cQ54oG9ZKdR@?6]334]e;2
+IYiF2`Y:1XLOB=YlUoHbhg2
 !i103 1
 S1
 R4
-R28
+w1635171744
 8scoreboard.sv
-R32
-!i122 133
+R34
+!i122 161
 R19
 R20
 31
-R9
-R21
-R22
+!s108 1636286642.000000
+!s107 scoreboard.sv|
+!s90 -sv|scoreboard.sv|
 !i113 1
 o-sv
 R23
 vtest
 R15
-DXx4 work 17 exercise1_sv_unit 0 22 aU4>]UF34iKfJf=OTE`9I3
-R33
+R14
+R16
 R17
 r1
 !s85 0
 !i10b 1
-!s100 DNFIbem66X>V7dCKLDTc11
-I3EcD[mDOGTT_Ln>De``?63
-Z41 !s105 exercise1_sv_unit
+!s100 Xz5^FSSPFAKDcb5iW]OHX1
+IX6D^O3FXPFCnfbRIb_f9i2
+R13
 S1
-R34
-R35
-R36
-R37
-!i122 135
-L0 46 21
+R4
+w1633352668
+Z35 8test.sv
+Z36 Ftest.sv
+!i122 168
+L0 6 9
 R20
 31
-R38
-R39
-R40
+R21
+Z37 !s107 scoreboard.sv|checker.sv|monitor.sv|driver.sv|generator.sv|transaction_mon.sv|transaction.sv|environment.sv|test.sv|ALU_iface.sv|top.sv|
+R22
 !i113 1
 o-sv
 R23
 Xtest_sv_unit
-R26
+R27
 R15
-R8
-VlcL9_QQIf<^e8o<X;jNV61
+!s110 1636286879
+Vf64>el_fY0O1m7b`_DOD]3
 r1
 !s85 0
 !i10b 1
-!s100 DRKBmDLO?m:N6Ao3mJzh21
-IlcL9_QQIf<^e8o<X;jNV61
+!s100 6[>jXUBmj2hRl>ZiJDNW90
+If64>el_fY0O1m7b`_DOD]3
 !i103 1
 S1
 R4
-R28
-8test.sv
-Z42 Ftest.sv
-R18
-R29
-R25
 R30
-R27
+R35
+R36
+R18
 R31
-R24
+R25
+R26
 R32
-!i122 133
+R29
+R33
+R24
+R34
+!i122 167
 R19
 R20
 31
-R9
-R21
-R22
+!s108 1636286879.000000
+!s107 scoreboard.sv|checker.sv|monitor.sv|driver.sv|generator.sv|transaction_mon.sv|transaction.sv|environment.sv|ALU_iface.sv|test.sv|
+!s90 -sv|test.sv|
 !i113 1
 o-sv
 R23
@@ -342,75 +346,101 @@ R13
 S1
 R4
 w1633352647
-Z43 8top.sv
-Z44 Ftop.sv
-!i122 133
+Z38 8top.sv
+Z39 Ftop.sv
+!i122 168
 L0 7 25
 R20
 31
-R9
 R21
+R37
 R22
 !i113 1
 o-sv
 R23
 Xtop_sv_unit
-R26
+R27
 R15
 R16
-Vm6jh3ZbV7z1>Le8M:;k:>0
+VL98=]23hAVFl2XoLa[WF:3
 r1
 !s85 0
 !i10b 1
-!s100 AATofI;d::V2z0]Gl_EE03
-Im6jh3ZbV7z1>Le8M:;k:>0
+!s100 VKdNd2_9UN>cF6z0I8aJ[0
+IL98=]23hAVFl2XoLa[WF:3
 !i103 1
 S1
 R4
-R28
-R43
-R44
-R18
-R42
-R29
-R25
 R30
-R27
+R38
+R39
+R18
+R36
 R31
-R24
+R25
+R26
 R32
-!i122 133
+R29
+R33
+R24
+R34
+!i122 168
 R19
 R20
 31
-R9
 R21
+R37
 R22
+!i113 1
+o-sv
+R23
+Xtransaction_mon_sv_unit
+R15
+!s110 1636286567
+VR7X[UhDE:F:]MQJ1JINfF2
+r1
+!s85 0
+!i10b 1
+!s100 kc9M]?_8K;kPRfS_^E[M?3
+IR7X[UhDE:F:]MQJ1JINfF2
+!i103 1
+S1
+R4
+w1636286563
+8transaction_mon.sv
+R26
+!i122 157
+R19
+R20
+31
+!s108 1636286566.000000
+!s107 transaction_mon.sv|
+!s90 -sv|transaction_mon.sv|
 !i113 1
 o-sv
 R23
 Xtransaction_sv_unit
 R15
-R8
-VKWVK8<`D6>eX>g;:UWh6g3
+!s110 1636286544
+VDZVGHjiQ<eE]66JUgmNH_3
 r1
 !s85 0
 !i10b 1
-!s100 72Go`TNU5l0D0E^5M]^co3
-IKWVK8<`D6>eX>g;:UWh6g3
+!s100 :SCX7>_KenE=DM17fdcYG2
+IDZVGHjiQ<eE]66JUgmNH_3
 !i103 1
 S1
 R4
-w1633352956
+R28
 8transaction.sv
 R25
-!i122 133
+!i122 156
 R19
 R20
 31
-R9
-R21
-R22
+!s108 1636286544.000000
+!s107 transaction.sv|
+!s90 -sv|transaction.sv|
 !i113 1
 o-sv
 R23

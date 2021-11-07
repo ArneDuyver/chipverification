@@ -2,11 +2,12 @@
 `define DEF_MON
 `include "ALU_iface.sv"
 `include "transaction.sv"
+`include "transaction_mon.sv"
 
 class monitor;
 
   virtual ALU_iface ifc;
-  mailbox #(transaction) mon2che;
+  mailbox #(transaction_mon) mon2che;
 
   function new(virtual ALU_iface ifc, mailbox #(transaction) m2c);
     this.ifc = ifc;
@@ -14,7 +15,7 @@ class monitor;
   endfunction : new
 
   task run();
-    transaction tra;
+    transaction_mon tra;
     byte A, B, Z;
     bit [2:0] operation;
     bit [3:0] flags_in;

@@ -1,6 +1,5 @@
 `ifndef DEF_TRANS
 `define DEF_TRANS
-`include "extra.h"
 class transaction;
 
   rand byte A;
@@ -53,7 +52,7 @@ class transaction;
     this.flags_out[0] = ( ((a + b + carry) > z) ? 1'b1 : 1'b0); // carry flag
 
     this.Z = byte'(z);
-  endtask : updateOutcome_ADD
+  endtask : updateOutcome_ADC
 
   task updateOutcome_SUB();
     shortint a, b, z;
@@ -136,7 +135,7 @@ class transaction;
 
     this.flags_out[3] = ((z==0) ? 1'b1 : 1'b0); // zero flag
     this.flags_out[2] = 1'b1; // Set
-    this.flags_out[1] = ( ((a%16) < ((b%16) + carry) > 15) ? 1'b1 : 1'b0 ); // half carry flag
+    this.flags_out[1] = ( ((a%16) < ((b%16)) > 15) ? 1'b1 : 1'b0 ); // half carry flag
     this.flags_out[0] = ( (a < b) ? 1'b1 : 1'b0); // carry flag
 
     this.Z = byte'(z);
@@ -167,10 +166,5 @@ class transaction;
   }
 
 endclass : transaction;
-
-program : transactionTests;
-
-
-
-endprogram transactionTests;
+//TODO: if a lot of thins fail, write a short program to test some functionalities
 `endif

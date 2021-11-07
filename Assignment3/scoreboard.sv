@@ -19,12 +19,10 @@ class scoreboard;
   endfunction : new
 
 
-  task run(int NOT);
+  task run();
     byte result;
-    this.NO_tests = NOT;
 
-    while (this.no_tests_done < this.NO_tests)
-    begin
+    forever begin
       this.che2scb.get(result);
 
       no_tests_done++; 
@@ -35,9 +33,10 @@ class scoreboard;
         //$display("[SCB] successful test registered");
       end else begin
         no_tests_nok++;
-        //$display("[SCB] unsuccessful test registered");
+        $display("[SCB] unsuccessful test registered");
+
       end
-    end /* while*/
+    end /* forever loop*/
   endtask : run
 
 

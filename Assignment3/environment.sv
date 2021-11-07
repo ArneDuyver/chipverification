@@ -2,6 +2,7 @@
 `define DEF_ENV
 
 `include "transaction.sv"
+`include "transaction_mon.sv"
 `include "generator.sv"
 `include "driver.sv"
 `include "monitor.sv"
@@ -12,7 +13,7 @@ class environment;
 
   mailbox #(transaction) gen2drv;
   mailbox #(transaction) gen2che;
-  mailbox #(transaction) mon2che;
+  mailbox #(transaction_mon) mon2che;
   mailbox #(byte) che2scb;
 
   virtual ALU_iface ifc;
@@ -44,7 +45,6 @@ class environment;
       begin      
         fork 
           check.run();
-          
           drv.run(); 
           gen.run();
         join_none;
@@ -60,7 +60,7 @@ class environment;
         //start the downstream
         fork
           //start generating
-          this.scb.run(2500); //FIXME:  2100 exactly
+          this.scb.run();
         join_any
         //wait
         repeat (10) @(posedge this.ifc.clock);
