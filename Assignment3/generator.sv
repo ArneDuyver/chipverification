@@ -90,6 +90,7 @@ class generator;
     //   this.gen2che.put(tra);
     // end
 
+    repeat (1000) @(posedge this.ifc.clock);
 
   endtask : run
 

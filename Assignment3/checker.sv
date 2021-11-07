@@ -22,6 +22,7 @@ class checkers;
     forever begin 
       this.mon2che.get(received_result);
       this.gen2che.get(expected_result);
+      $display("[CHE] checking ...");
       if (expected_result.Z == received_result.Z)
       begin
         if (expected_result.flags_out == received_result.flags_out)
