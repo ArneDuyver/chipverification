@@ -13,8 +13,11 @@ class generator;
 
   task runTest1();
     transaction tra;
+    
+    int id;
+    id = 0;
     $display("[GEN] Starting Test 1");
-    int index = 0;
+
     forever begin
       tra = new();
       tra.test1.constraint_mode(1);
@@ -24,10 +27,10 @@ class generator;
       tra.test5.constraint_mode(0);
       void'(tra.randomize());
       updateOutcome(tra);
-      if (index == 0) $display("[GEN] tr%d: %s", index, tra.toString());
+      if (id == 0) $display("[GEN] tr%d: %s", id, tra.toString());
       this.gen2drv.put(tra);
       this.gen2che.put(tra);
-      index = index + 1;
+      id = id + 1;
     end /* forever*/
   endtask : runTest1
 
