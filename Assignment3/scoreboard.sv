@@ -25,7 +25,7 @@ class scoreboard;
 
     while (this.no_tests_done < this.NO_tests) begin
       this.che2scb.get(result);
-      $display("[SCB] result = %d",result);
+      //$display("[SCB] result = %d",result);
       no_tests_done++; 
       
       if (result > 0)

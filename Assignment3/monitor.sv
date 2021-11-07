@@ -32,7 +32,7 @@ class monitor;
       flags_in = this.ifc.flags_in;
       flags_out = this.ifc.flags_out;
       tra = new(A, B, flags_in, operation, Z, flags_out);
-      if (id >= 0) $display("[MON] tr_mon%d: %s", id, tra.toString());
+      //if (id >= 0) $display("[MON] tr_mon%d: %s", id, tra.toString());
 
       if (check_valid(A,B,flags_in,operation) != 0)begin
         this.mon2che.put(tra);

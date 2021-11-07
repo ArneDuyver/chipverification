@@ -26,7 +26,7 @@ class generator;
       end
       void'(tra.randomize());
       updateOutcome(tra);
-      if (id == 0) $display("[GEN] tr%d: %s", id, tra.toString());
+      //if (id == 0) $display("[GEN] tr%d: %s", id, tra.toString());
       this.gen2drv.put(tra);
       this.gen2che.put(tra);
       id = id + 1;
