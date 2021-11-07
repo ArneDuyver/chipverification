@@ -11,92 +11,22 @@ class generator;
     this.gen2che = g2e;
   endfunction : new
 
-  task run();
+  task runTest1();
     transaction tra;
-
+     $display("[GEN] Starting Test 1");
     forever begin
-      // Test1
-      $display("[GEN] Starting Test 1");
-      //for (int i=0; i<100*8; i++) begin
-      for (int i=0; i<5; i++) begin
-        //$display("[GEN] making trans...");
-        tra = new();
-        tra.test1.constraint_mode(1);
-        tra.test2.constraint_mode(0);
-        tra.test3.constraint_mode(0);
-        tra.test4.constraint_mode(0);
-        tra.test5.constraint_mode(0);
-        void'(tra.randomize());
-        updateOutcome(tra);
-        //$display("%s", tra.toString());
-        this.gen2drv.put(tra);
-        this.gen2che.put(tra);
-      end 
-      // // Test2
-      // $display("[GEN] Starting Test 2");
-      // for (int i=0; i<100; i++) begin
-      //   tra = new();
-      //   tra.test1.constraint_mode(0);
-      //   tra.test2.constraint_mode(1);
-      //   tra.test3.constraint_mode(0);
-      //   tra.test4.constraint_mode(0);
-      //   tra.test5.constraint_mode(0);
-      //   void'(tra.randomize());
-      //   updateOutcome(tra);
-      //   //$display("%s", tra.toString());
-      //   this.gen2drv.put(tra);
-      //   this.gen2che.put(tra);
-      // end
-      // // Test3
-      // $display("[GEN] Starting Test 3");
-      // for (int i=0; i<100; i++) begin
-      //   tra = new();
-      //   tra.test1.constraint_mode(0);
-      //   tra.test2.constraint_mode(0);
-      //   tra.test3.constraint_mode(1);
-      //   tra.test4.constraint_mode(0);
-      //   tra.test5.constraint_mode(0);
-      //   void'(tra.randomize());
-      //   updateOutcome(tra);
-      //   //$display("%s", tra.toString());
-      //   this.gen2drv.put(tra);
-      //   this.gen2che.put(tra);
-      // end
-      // // Test4
-      // $display("[GEN] Starting Test 4");
-      // for (int i=0; i<100; i++) begin
-      //   tra = new();
-      //   tra.test1.constraint_mode(0);
-      //   tra.test2.constraint_mode(0);
-      //   tra.test3.constraint_mode(0);
-      //   tra.test4.constraint_mode(1);
-      //   tra.test5.constraint_mode(0);
-      //   void'(tra.randomize());
-      //   updateOutcome(tra);
-      //   //$display("%s", tra.toString());
-      //   this.gen2drv.put(tra);
-      //   this.gen2che.put(tra);
-      // end
-      // // Test5
-      // $display("[GEN] Starting Test 5");
-      // for (int i=0; i<1000; i++) begin
-      //   tra = new();
-      //   tra.test1.constraint_mode(0);
-      //   tra.test2.constraint_mode(0);
-      //   tra.test3.constraint_mode(0);
-      //   tra.test4.constraint_mode(0);
-      //   tra.test5.constraint_mode(1);
-      //   void'(tra.randomize());
-      //   updateOutcome(tra);
-      //   //$display("%s", tra.toString());
-      //   this.gen2drv.put(tra);
-      //   this.gen2che.put(tra);
-      // end
-      forever begin
-        //Do nothing
-      end
+      tra = new();
+      tra.test1.constraint_mode(1);
+      tra.test2.constraint_mode(0);
+      tra.test3.constraint_mode(0);
+      tra.test4.constraint_mode(0);
+      tra.test5.constraint_mode(0);
+      void'(tra.randomize());
+      updateOutcome(tra);
+      //$display("%s", tra.toString());
+      this.gen2drv.put(tra);
+      this.gen2che.put(tra);
     end /* forever*/
-
   endtask : run
 
   task updateOutcome(transaction tra);
@@ -112,7 +42,6 @@ class generator;
       default : tra.updateOutcome_ADD;
     endcase
   endtask : updateOutcome
-  
 
 endclass : generator
 `endif

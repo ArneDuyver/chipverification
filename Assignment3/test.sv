@@ -8,7 +8,10 @@ module test (ALU_iface ifc);
 
   initial
   begin
-    env.run();
+    //Test1
+    env.run(1,5); //1,100*8
+    //Test1 again
+    env.run(1,5);
   end
 
 endmodule : test

@@ -40,19 +40,22 @@ class environment;
 
   endfunction : new
 
-  task run();
+  task run(int testNr,int nrOfTests);
     fork
       begin      
         fork 
           check.run();
           drv.run(); 
-          //gen.run();
+          case(testNr)
+            1 : gen.runTest1();
+            default : gen.runTest1();
+          endcase
+          
         join_none;
         //wait for some time
         repeat (10) @(posedge this.ifc.clock);
 
         fork
-          gen.run();
           mon.run(); 
         join_none;
         //wait for some time
@@ -61,7 +64,7 @@ class environment;
         //start the downstream
         fork
           //start generating
-          this.scb.run(5);
+          this.scb.run(nrOfTests);
         join_any
         //wait
         repeat (10) @(posedge this.ifc.clock);
