@@ -11,7 +11,7 @@ module test (ALU_iface ifc);
     //Test1
     env.run(1,5); //1,100*8
     //Test1 again
-    //env.run(1,5);
+    env.run(1,5);
     $finish;
   end
 
