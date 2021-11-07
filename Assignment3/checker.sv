@@ -26,7 +26,8 @@ class checkers;
       begin
         if (expected_result.flags_out == received_result.flags_out)
         begin
-          $display("[CHE] test success");
+          $display("[CHE] success test, expected: %s", expected_result.toString());
+          $display("[CHE] success test, received: %s", received_result.toString());
           this.che2scb.put(byte'(1));
         end else begin
           $display("[CHE] failed test, expected: %s", expected_result.toString());

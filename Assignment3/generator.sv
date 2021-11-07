@@ -15,7 +15,8 @@ class generator;
     transaction tra;
     // Test1
     $display("[GEN] Starting Test 1");
-    for (int i=0; i<100*8; i++) begin
+    //for (int i=0; i<100*8; i++) begin
+    for (int i=0; i<5; i++) begin
       tra = new();
       tra.test1.constraint_mode(1);
       tra.test2.constraint_mode(0);
@@ -28,69 +29,66 @@ class generator;
       this.gen2drv.put(tra);
       this.gen2che.put(tra);
     end 
-    // Test2
-    $display("[GEN] Starting Test 2");
-    for (int i=0; i<100; i++) begin
-      tra = new();
-      tra.test1.constraint_mode(0);
-      tra.test2.constraint_mode(1);
-      tra.test3.constraint_mode(0);
-      tra.test4.constraint_mode(0);
-      tra.test5.constraint_mode(0);
-      void'(tra.randomize());
-      updateOutcome(tra);
-      //$display("%s", tra.toString());
-      this.gen2drv.put(tra);
-      this.gen2che.put(tra);
-    end
-    // Test3
-    $display("[GEN] Starting Test 3");
-    for (int i=0; i<100; i++) begin
-      tra = new();
-      tra.test1.constraint_mode(0);
-      tra.test2.constraint_mode(0);
-      tra.test3.constraint_mode(1);
-      tra.test4.constraint_mode(0);
-      tra.test5.constraint_mode(0);
-      void'(tra.randomize());
-      updateOutcome(tra);
-      //$display("%s", tra.toString());
-      this.gen2drv.put(tra);
-      this.gen2che.put(tra);
-    end
-    // Test4
-    $display("[GEN] Starting Test 4");
-    for (int i=0; i<100; i++) begin
-      tra = new();
-      tra.test1.constraint_mode(0);
-      tra.test2.constraint_mode(0);
-      tra.test3.constraint_mode(0);
-      tra.test4.constraint_mode(1);
-      tra.test5.constraint_mode(0);
-      void'(tra.randomize());
-      updateOutcome(tra);
-      //$display("%s", tra.toString());
-      this.gen2drv.put(tra);
-      this.gen2che.put(tra);
-    end
-    // Test5
-    $display("[GEN] Starting Test 5");
-    for (int i=0; i<1000; i++) begin
-      tra = new();
-      tra.test1.constraint_mode(0);
-      tra.test2.constraint_mode(0);
-      tra.test3.constraint_mode(0);
-      tra.test4.constraint_mode(0);
-      tra.test5.constraint_mode(1);
-      void'(tra.randomize());
-      updateOutcome(tra);
-      //$display("%s", tra.toString());
-      $display("1");
-      this.gen2drv.put(tra);
-      $display("2");
-      this.gen2che.put(tra);
-      $display("3");
-    end
+    // // Test2
+    // $display("[GEN] Starting Test 2");
+    // for (int i=0; i<100; i++) begin
+    //   tra = new();
+    //   tra.test1.constraint_mode(0);
+    //   tra.test2.constraint_mode(1);
+    //   tra.test3.constraint_mode(0);
+    //   tra.test4.constraint_mode(0);
+    //   tra.test5.constraint_mode(0);
+    //   void'(tra.randomize());
+    //   updateOutcome(tra);
+    //   //$display("%s", tra.toString());
+    //   this.gen2drv.put(tra);
+    //   this.gen2che.put(tra);
+    // end
+    // // Test3
+    // $display("[GEN] Starting Test 3");
+    // for (int i=0; i<100; i++) begin
+    //   tra = new();
+    //   tra.test1.constraint_mode(0);
+    //   tra.test2.constraint_mode(0);
+    //   tra.test3.constraint_mode(1);
+    //   tra.test4.constraint_mode(0);
+    //   tra.test5.constraint_mode(0);
+    //   void'(tra.randomize());
+    //   updateOutcome(tra);
+    //   //$display("%s", tra.toString());
+    //   this.gen2drv.put(tra);
+    //   this.gen2che.put(tra);
+    // end
+    // // Test4
+    // $display("[GEN] Starting Test 4");
+    // for (int i=0; i<100; i++) begin
+    //   tra = new();
+    //   tra.test1.constraint_mode(0);
+    //   tra.test2.constraint_mode(0);
+    //   tra.test3.constraint_mode(0);
+    //   tra.test4.constraint_mode(1);
+    //   tra.test5.constraint_mode(0);
+    //   void'(tra.randomize());
+    //   updateOutcome(tra);
+    //   //$display("%s", tra.toString());
+    //   this.gen2drv.put(tra);
+    //   this.gen2che.put(tra);
+    // end
+    // // Test5
+    // $display("[GEN] Starting Test 5");
+    // for (int i=0; i<1000; i++) begin
+    //   tra = new();
+    //   tra.test1.constraint_mode(0);
+    //   tra.test2.constraint_mode(0);
+    //   tra.test3.constraint_mode(0);
+    //   tra.test4.constraint_mode(0);
+    //   tra.test5.constraint_mode(1);
+    //   void'(tra.randomize());
+    //   updateOutcome(tra);
+    //   //$display("%s", tra.toString());
+    //   this.gen2drv.put(tra);
+    //   this.gen2che.put(tra);
+    // end
 
 
   endtask : run
