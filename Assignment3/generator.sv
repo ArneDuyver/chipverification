@@ -27,7 +27,7 @@ class generator;
       this.gen2drv.put(tra);
       this.gen2che.put(tra);
     end /* forever*/
-  endtask : run
+  endtask : runTest1
 
   task updateOutcome(transaction tra);
     case(tra.operation)
