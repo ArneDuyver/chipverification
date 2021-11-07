@@ -19,7 +19,7 @@ class generator;
       $display("[GEN] Starting Test 1");
       //for (int i=0; i<100*8; i++) begin
       for (int i=0; i<5; i++) begin
-        $display("[GEN] making trans...");
+        //$display("[GEN] making trans...");
         tra = new();
         tra.test1.constraint_mode(1);
         tra.test2.constraint_mode(0);
@@ -92,6 +92,9 @@ class generator;
       //   this.gen2drv.put(tra);
       //   this.gen2che.put(tra);
       // end
+      forever begin
+        //Do nothing
+      end
     end /* forever*/
 
   endtask : run

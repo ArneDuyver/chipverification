@@ -31,7 +31,7 @@ class monitor;
       flags_in = this.ifc.flags_in;
       flags_out = this.ifc.flags_out;
       tra = new(A, B, flags_in, operation, Z, flags_out);
-      $display("[MON] sending trans_mon...");
+      //$display("[MON] sending trans_mon...");
       this.mon2che.put(tra);
     end /* forever */
   endtask : run
