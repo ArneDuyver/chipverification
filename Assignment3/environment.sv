@@ -46,12 +46,13 @@ class environment;
         fork 
           check.run();
           drv.run(); 
-          gen.run();
+          //gen.run();
         join_none;
         //wait for some time
         repeat (10) @(posedge this.ifc.clock);
 
         fork
+          gen.run();
           mon.run(); 
         join_none;
         //wait for some time
