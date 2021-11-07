@@ -16,7 +16,10 @@ class generator;
     
     int id;
     id = 0;
+    $display("#######################");
     $display("[GEN] Starting Test %d",testNr);
+    $display("#######################");
+
     forever begin
       tra = new();
       if (id<NOT) begin
