@@ -18,7 +18,7 @@ class checkers;
   task run; 
     transaction_mon received_result;
     transaction expected_result;
-
+    int index = 0;
     forever begin 
       this.mon2che.get(received_result);
       this.gen2che.get(expected_result);
@@ -26,20 +26,21 @@ class checkers;
       begin
         if (expected_result.flags_out == received_result.flags_out)
         begin
-          $display("[CHE] success test, expected: %s", expected_result.toString());
-          $display("[CHE] success test, received: %s", received_result.toString());
+          $display("[CHE] success test%d, expected: %s", index, expected_result.toString());
+          $display("[CHE] success test%d, received: %s",index, received_result.toString());
           this.che2scb.put(byte'(1));
         end else begin
-          $display("[CHE] failed test, expected: %s", expected_result.toString());
-          $display("[CHE] failed test, received: %s", received_result.toString());
+          $display("[CHE] failed test%d, expected: %s",index, expected_result.toString());
+          $display("[CHE] failed test%d, received: %s",index, received_result.toString());
           this.che2scb.put(byte'(0));
         end
       end else begin
-        $display("[CHE] failed test, expected: %s", expected_result.toString());
-        $display("[CHE] failed test, received: %s", received_result.toString());
+        $display("[CHE] failed test%d, expected: %s",index, expected_result.toString());
+        $display("[CHE] failed test%d, received: %s",index, received_result.toString());
         this.che2scb.put(byte'(0));
       end
     end
+    index = index + 1;
   endtask
   
 endclass : checkers

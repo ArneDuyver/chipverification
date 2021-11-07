@@ -20,7 +20,7 @@ class monitor;
     bit [2:0] operation;
     bit [3:0] flags_in;
     bit [3:0] flags_out;
-    
+    int index = 0;
     forever begin
       @(negedge this.ifc.clock);
       
@@ -31,8 +31,9 @@ class monitor;
       flags_in = this.ifc.flags_in;
       flags_out = this.ifc.flags_out;
       tra = new(A, B, flags_in, operation, Z, flags_out);
-      //$display("[MON] sending trans_mon...");
+      if (index >= 0) $display("[MON] tr_mon%d: %s", index, tra.toString());
       this.mon2che.put(tra);
+      index = index + 1;
     end /* forever */
   endtask : run
 
