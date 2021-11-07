@@ -55,7 +55,7 @@ class environment;
           mon.run(); 
         join_none;
         //wait for some time
-        repeat (100) @(posedge this.ifc.clock);
+        repeat (10) @(posedge this.ifc.clock);
 
         //start the downstream
         fork

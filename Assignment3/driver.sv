@@ -23,7 +23,7 @@ class driver;
     
     forever begin 
       this.gen2drv.get(tra);
-
+      $display("[DRV] driving iface...");
       @(negedge this.ifc.clock);
       this.ifc.data_a <= tra.A;
       this.ifc.data_b <= tra.B;

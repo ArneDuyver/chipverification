@@ -17,6 +17,7 @@ class generator;
     $display("[GEN] Starting Test 1");
     //for (int i=0; i<100*8; i++) begin
     for (int i=0; i<5; i++) begin
+      $display("[GEN] making trans...");
       tra = new();
       tra.test1.constraint_mode(1);
       tra.test2.constraint_mode(0);
