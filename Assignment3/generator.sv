@@ -91,9 +91,9 @@ class generator;
     //   this.gen2che.put(tra);
     // end
 
-    forever begin
+    //forever begin
       //Just keep running
-    end
+    //end
 
   endtask : run
 
