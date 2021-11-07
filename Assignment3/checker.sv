@@ -22,7 +22,6 @@ class checkers;
     forever begin 
       this.mon2che.get(received_result);
       this.gen2che.get(expected_result);
-      $display("[CHE] checking ...");
       if (expected_result.Z == received_result.Z)
       begin
         if (expected_result.flags_out == received_result.flags_out)
@@ -36,6 +35,8 @@ class checkers;
           this.che2scb.put(byte'(0));
         end
       end else begin
+        $display("[CHE] failed test, expected: %s", expected_result.toString());
+        $display("[CHE] failed test, received: %s", received_result.toString());
         this.che2scb.put(byte'(0));
       end
     end
