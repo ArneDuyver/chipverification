@@ -40,8 +40,8 @@ class checkers;
         $display("[CHE] failed test%d, received: %s",id, received_result.toString());
         this.che2scb.put(byte'(0));
       end
+      id = id + 1;
     end
-    id = id + 1;
   endtask
   
 endclass : checkers
