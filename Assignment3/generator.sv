@@ -90,10 +90,8 @@ class generator;
     //   this.gen2che.put(tra);
     // end
 
-    for (int i=0; i<1000; i++) begin
-      for (int j=0; j<1000;j++) begin
-        int x = i+j;
-      end
+    forever begin
+      //Just keep running
     end
 
   endtask : run

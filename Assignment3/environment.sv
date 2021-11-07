@@ -55,12 +55,12 @@ class environment;
           mon.run(); 
         join_none;
         //wait for some time
-        repeat (10) @(posedge this.ifc.clock);
+        repeat (100) @(posedge this.ifc.clock);
 
         //start the downstream
         fork
           //start generating
-          this.scb.run();
+          this.scb.run(5);
         join_any
         //wait
         repeat (10) @(posedge this.ifc.clock);
