@@ -57,13 +57,6 @@ class environment;
 
         fork
           mon.run(); 
-        join_none;
-        //wait for some time
-        repeat (10) @(posedge this.ifc.clock);
-
-        //start the downstream
-        fork
-          //start generating
           this.scb.run(nrOfTests);
         join_any
         //wait
