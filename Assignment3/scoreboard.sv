@@ -48,7 +48,7 @@ class scoreboard;
     $display("[SCB] # tests ok           : %0d", this.no_tests_ok);
     $display("[SCB] # tests failed       : %0d", this.no_tests_nok);
     $display("[SCB] # tests success rate : %0.2f", (this.no_tests_ok*100.0)/this.no_tests_done);
-    $finish
+    $finish;
   endtask : showReport
 endclass : scoreboard
 `endif
