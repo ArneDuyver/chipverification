@@ -41,8 +41,7 @@ class environment;
   endfunction : new
 
   task rst_for_new_test();
-    begin
-      //TODO: 
+    begin 
       transaction tra;
       transaction_mon tra_mon;
       byte b;
