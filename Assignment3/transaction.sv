@@ -148,7 +148,7 @@ class transaction;
 
   constraint test2 {
     operation == 3'b010;
-    B > A;
+    unsigned'(B) > unsigned'(A);
   }
 
   constraint test3 {
