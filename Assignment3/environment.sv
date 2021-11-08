@@ -40,32 +40,27 @@ class environment;
 
   endfunction : new
 
-  task rst_env();
+  task rst_for_new_test();
     begin
-      this.gen2drv = new(5);
-      this.gen2che = new(5);
-      this.mon2che = new(5);
-      this.che2scb = new(5);
-
-      this.gen = new(this.gen2drv, this.gen2che);
-      this.drv = new(ifc, this.gen2drv);
-      this.mon = new(ifc, this.mon2che);
-
-      this.check = new(this.gen2che,this.mon2che,this.che2scb);
-      this.scb = new(this.che2scb);
+      //TODO: 
+      transaction tra;
+      byte b;
+      this.drv.rst_iface();
+      while (this.gen2drv.try_get(tra));
+      while (this.gen2che.try_get(tra));
+      while (this.mon2che.try_get(tra));
+      while (this.che2scb.try_get(b));
     end
-  endtask : rst_env
+  endtask : rst_for_new_test
 
-  task run(int testNr,int nrOfTests);
+  task run(int test, int nrOfTests);
     fork
       begin  
-        rst_env(); 
-        this.drv.rst_iface();   
         fork 
           this.check.run();
           this.mon.run();
           this.drv.run(); 
-          this.gen.run(testNr,nrOfTests);
+          this.gen.run(test,nrOfTests);
         join_none;
         //wait for some time
         repeat (10) @(posedge this.ifc.clock);
@@ -78,10 +73,11 @@ class environment;
         disable fork;
       end;
     join;
-
-    this.scb.showReport();
-
   endtask : run
+
+  task showReport();
+    this.scb.showReport();
+  endtask : showReport
 
 endclass : environment
 `endif
