@@ -24,7 +24,7 @@ class checkers;
       this.mon2che.get(received_result);
       this.gen2che.get(expected_result);
       //Steekproeven om de correctheid van de testen aan te tonen
-      if(id > 50 && id < 55) begin
+      if(id > 50 && id <= 60) begin
         $display("[CHE] steekproef%d, expected: %s", id, expected_result.toString());
         $display("[CHE] steekproef%d, received: %s",id, received_result.toString());
         $display("[CHE]-----------------------------------------------------------[CHE]");
