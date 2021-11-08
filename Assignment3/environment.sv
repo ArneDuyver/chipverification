@@ -44,11 +44,12 @@ class environment;
     begin
       //TODO: 
       transaction tra;
+      transaction_mon tra_mon;
       byte b;
       this.drv.rst_iface();
       while (this.gen2drv.try_get(tra));
       while (this.gen2che.try_get(tra));
-      //while (this.mon2che.try_get(tra));
+      while (this.mon2che.try_get(tra_mon));
       while (this.che2scb.try_get(b));
     end
   endtask : rst_for_new_test
