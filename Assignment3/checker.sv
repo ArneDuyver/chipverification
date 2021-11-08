@@ -18,7 +18,7 @@ class checkers;
   task run; 
     transaction_mon received_result;
     transaction expected_result;
-    byte id;
+    int id;
     id = 0;
     forever begin 
       this.mon2che.get(received_result);
