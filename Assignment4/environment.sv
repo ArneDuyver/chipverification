@@ -1,22 +1,22 @@
 `ifndef DEF_ENV
 `define DEF_ENV
 
-`include "transaction.sv"
-`include "transaction_mon.sv"
+`include "machinecode_instruction.sv"
 `include "generator.sv"
 `include "driver.sv"
 `include "monitor.sv"
 `include "checker.sv"
 `include "scoreboard.sv"
+`include "GB_iface.sv"
 
 class environment;
 
-  mailbox #(transaction) gen2drv;
-  mailbox #(transaction) gen2che;
-  mailbox #(transaction_mon) mon2che;
+  mailbox #(machinecode_instruction) gen2drv;
+  mailbox #(machinecode_instruction) gen2che;
+  mailbox #(machinecode_instruction) mon2che;
   mailbox #(byte) che2scb;
 
-  virtual ALU_iface ifc;
+  virtual GB_iface ifc;
 
   generator gen;
   driver drv;
@@ -24,7 +24,7 @@ class environment;
   checkers check;
   scoreboard scb;
 
-  function new(virtual ALU_iface ifc);
+  function new(virtual GB_iface ifc);
     this.ifc = ifc;
     this.gen2drv = new(5);
     this.gen2che = new(5);
@@ -42,25 +42,25 @@ class environment;
 
   task rst_for_new_test();
     begin 
-      transaction tra;
-      transaction_mon tra_mon;
+      machinecode_instruction instr;
       byte b;
       this.drv.rst_iface();
-      while (this.gen2drv.try_get(tra));
-      while (this.gen2che.try_get(tra));
-      while (this.mon2che.try_get(tra_mon));
+      while (this.gen2drv.try_get(instr));
+      while (this.gen2che.try_get(instr));
+      while (this.mon2che.try_get(instr));
       while (this.che2scb.try_get(b));
     end
   endtask : rst_for_new_test
 
-  task run(int test, int nrOfTests);
+  //TODO: 3
+  task run(int nrOfTests);
     fork
       begin  
         fork 
           this.check.run();
           this.mon.run();
           this.drv.run(); 
-          this.gen.run(test,nrOfTests);
+          this.gen.run();
         join_none;
         //wait for some time
         repeat (10) @(posedge this.ifc.clock);

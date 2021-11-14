@@ -1,50 +1,40 @@
 `ifndef DEF_MON
 `define DEF_MON
-`include "ALU_iface.sv"
-`include "transaction.sv"
-`include "transaction_mon.sv"
+`include "GB_iface.sv"
+`include "machinecode_instruction.sv"
 
 class monitor;
 
-  virtual ALU_iface ifc;
-  mailbox #(transaction_mon) mon2che;
+  virtual GB_iface ifc;
+  mailbox #(machinecode_instruction) mon2che;
 
-  function new(virtual ALU_iface ifc, mailbox #(transaction_mon) m2c);
+  function new(virtual GB_iface ifc, mailbox #(machinecode_instruction) m2c); //TODO: 1 make a new class for monitor to send value regA and flags in regF
     this.ifc = ifc;
     this.mon2che = m2c;
   endfunction : new
 
   task run();
-    transaction_mon tra;
-    byte A, B, Z;
-    bit [2:0] operation;
-    bit [3:0] flags_in;
-    bit [3:0] flags_out;
-    int id;
-    id = 0;
+    machinecode_instruction instr; //TODO: change to THINGY
+    byte regA, instruction;
+    bit [3:0] flags;
+    bit prev_valid;
+
     forever begin
       @(negedge this.ifc.clock);
       
-      A = this.ifc.data_a;
-      B = this.ifc.data_b;
-      Z = this.ifc.data_z;
-      operation = this.ifc.operation;
-      flags_in = this.ifc.flags_in;
-      flags_out = this.ifc.flags_out;
-      tra = new(A, B, flags_in, operation, Z, flags_out);
-      //if (id >= 0) $display("[MON] tr_mon%d: %s", id, tra.toString());
+      regA = this.ifc.probe[15:8];
+      flasg = this.ifc.probe[7:4];
+      instruction = this.ifc.instruction; //not really neccessary to send to checker I think.
+      tra = new(A, B, flags_in, operation, Z, flags_out);//TODO: change to make a THINGY
 
-      if (check_valid(A,B,flags_in,operation) != 0) begin
-        this.mon2che.put(tra);
+      if (this.ifc.valid && prev_valid) begin
+        this.mon2che.put(THINGY); //TODO: fix THINGY
       end
 
-      id = id + 1;
+      prev_valid = this.ifc.valid;
+
     end /* forever */
   endtask : run
-
-  function check_valid(byte A,byte B,bit [3:0] flags_in,bit [2:0] operation);
-    return A || B || flags_in || operation;
-  endfunction : check_valid
 
 endclass : monitor
 `endif

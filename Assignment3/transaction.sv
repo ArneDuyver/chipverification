@@ -166,5 +166,6 @@ class transaction;
   }
 
 endclass : transaction;
-//TODO: if a lot of thins fail, write a short program to test some functionalities
+//If a lot of things fail, write a short program to test some functionalities
+//But they didn't so you can still do this if you really want but not neccesary for now
 `endif

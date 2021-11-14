@@ -1,7 +1,7 @@
 `ifndef DEF_TOP
 `define DEF_TOP
 
-`include "ALU_iface.sv"
+`include "GB_iface.sv"
 `include "test.sv"
 
 module top;
@@ -11,22 +11,21 @@ module top;
   always #5 clock = ~clock;
 
   // instantiate an interface
-  ALU_iface theInterface (
+  GB_iface ifc (
     .clock(clock)
   );
 
   // instantiate the DUT and connect it to the interface
-  ALU dut (
-    .A(theInterface.data_a),
-    .B(theInterface.data_b),
-    .flags_in(theInterface.flags_in),
-    .Z(theInterface.data_z),
-    .flags_out(theInterface.flags_out),
-    .operation(theInterface.operation)
+  gbprocessor dut (
+    .reset(ifc.reset),
+    .clock(ifc.clock),
+    .instruction(ifc.instruction),
+    .valid(ifc.valid),
+    .probe(ifc.probe) 
   );
 
   // SV testing 
-  test tst(theInterface);
+  test tst(ifc);
 
 endmodule : top
 `endif

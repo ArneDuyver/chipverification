@@ -1,5 +1,5 @@
-`ifndef DEF_IFC
-`define DEF_IFC
+`ifndef DEF_IFC_ALU
+`define DEF_IFC_ALU
 interface ALU_iface ( input logic clock );
   logic [7:0] data_a;
   logic [7:0] data_b;
