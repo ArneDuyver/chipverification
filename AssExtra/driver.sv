@@ -18,20 +18,22 @@ class driver;
 
     forever begin 
       this.gen2drv.get(instr);
-      @(negedge this.ifc.clock);
-      this.ifc.reset <= 0; //QUESTION: Is this neccessary?
+      @(posedge this.ifc.clock);
+      //this.ifc.reset <= 0; //Is this neccessary? I dont think so
       this.ifc.valid <= 1;
+      @(negedge this.ifc.clock);
       this.ifc.instruction <= instr.instruction;
     end /* forever */        
   endtask : run
 
   task rst_iface();
+    @(posedge this.ifc.clock);
+    this.ifc.valid <= 0;
     @(negedge this.ifc.clock);
     this.ifc.reset <= 1;
-    this.ifc.valid <= 0;
     repeat (2) @(posedge this.ifc.clock);
     this.ifc.reset <= 0;
-    this.ifc.valid <= 0;
+    //Possibly add some clock cycles while doing nothing if nesseccary
   endtask : rst_iface
 
 endclass : driver

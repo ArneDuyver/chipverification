@@ -5,14 +5,14 @@
 class gameboyprocessor;
 
     /* The model contains eight 8-bit registers */
-    byte A;
-    byte B;
-    byte C;
-    byte D;
-    byte E;
-    byte F;
-    byte H;
-    byte L;
+    byte unsigned A;
+    byte unsigned B;
+    byte unsigned C;
+    byte unsigned D;
+    byte unsigned E;
+    byte unsigned F;
+    byte unsigned H;
+    byte unsigned L;
 
     /* Upon creating an object, the registers are initialised. A */
     /* simplication was done, because the LOAD instructions are */
@@ -65,66 +65,74 @@ class gameboyprocessor;
 
         a = unsigned'(this.A);
         b = unsigned'(lookup_operand(instr[2:0]));
-        c = unsigned'(this.F[0]);
+        c = unsigned'(this.F[4]);
 
         case(instr[5:3])
             3'b001: begin
                         z = (a + b + c) % 256;
-    					this.F[2] = 1'b0;
-    					this.F[1] = ( (((a%16) + (b%16)) + c > 15) ? 1'b1 : 1'b0 );
-    					this.F[0] = ( ((a + b + c ) > z) ? 1'b1 : 1'b0);
+    					this.F[6] = 1'b0;
+    					this.F[5] = ( (((a%16) + (b%16)) + c > 15) ? 1'b1 : 1'b0 );
+    					this.F[4] = ( ((a + b + c ) > z) ? 1'b1 : 1'b0);
                     end
             3'b010: begin
                         z = (a - b) % 256;
-    					this.F[2] = 1'b1; 
-    					this.F[1] = ( ( (b%16) > (a%16) ) ? 1'b1 : 1'b0 ); 
-    					this.F[0] = ( ( b > a ) ? 1'b1 : 1'b0 ); 
+    					this.F[6] = 1'b1; 
+    					this.F[5] = ( ( (b%16) > (a%16) ) ? 1'b1 : 1'b0 ); 
+    					this.F[4] = ( ( b > a ) ? 1'b1 : 1'b0 ); 
                     end
             3'b011: begin
                         z = (a - b - c) % 256;
-    					this.F[2] = 1'b1; 
-    					this.F[1] = ( ( (b%16) + c > (a%16) ) ? 1'b1 : 1'b0 ); 
-    					this.F[0] = ( ( b + c > a ) ? 1'b1 : 1'b0 ); 
+    					this.F[6] = 1'b1; 
+    					this.F[5] = ( ( (b%16) + c > (a%16) ) ? 1'b1 : 1'b0 ); 
+    					this.F[4] = ( ( b + c > a ) ? 1'b1 : 1'b0 ); 
                     end
             3'b100: begin
                         z = a & b;
-    					this.F[2] = 1'b0;
-    					this.F[1] = 1'b1;
-    					this.F[0] = 1'b0;
+    					this.F[6] = 1'b0;
+    					this.F[5] = 1'b1;
+    					this.F[4] = 1'b0;
                     end
             3'b101: begin
                         z = a ^ b;
-    					this.F[2] = 1'b0;
-    					this.F[1] = 1'b0;
-    					this.F[0] = 1'b0;
+    					this.F[6] = 1'b0;
+    					this.F[5] = 1'b0;
+    					this.F[4] = 1'b0;
                     end
             3'b110: begin
                        z = a | b;
-    					this.F[2] = 1'b0;
-    					this.F[1] = 1'b0;
-    					this.F[0] = 1'b0;
+    					this.F[6] = 1'b0;
+    					this.F[5] = 1'b0;
+    					this.F[4] = 1'b0;
                     end
             3'b111: begin
                         z = (a - b) % 256;
-    					this.F[2] = 1'b1;
-    					this.F[1] = ( ( (b%16) > (a%16) ) ? 1'b1 : 1'b0 ); 
-    					this.F[0] = ( ( b > a ) ? 1'b1 : 1'b0 ); 
+    					this.F[6] = 1'b1;
+    					this.F[5] = ( ( (b%16) > (a%16) ) ? 1'b1 : 1'b0 ); 
+    					this.F[4] = ( ( b > a ) ? 1'b1 : 1'b0 ); 
                         z = a;
                     end
             default : begin
                         z = (a + b) % 256;
-    					this.F[2] = 1'b0; 
-    					this.F[1] = ( (((a%16) + (b%16)) > 15) ? 1'b1 : 1'b0 ); 
-    					this.F[0] = ( ((a + b) > z) ? 1'b1 : 1'b0); 
+    					this.F[6] = 1'b0; 
+    					this.F[5] = ( (((a%16) + (b%16)) > 15) ? 1'b1 : 1'b0 ); 
+    					this.F[4] = ( ((a + b) > z) ? 1'b1 : 1'b0); 
                     end
         endcase
 
-        this.F[3] = ((z==0) ? 1'b1 : 1'b0); 
+        this.F[7] = ((z==0) ? 1'b1 : 1'b0); 
 
         this.A = byte'(z);
 
     endtask : executeALUInstruction
 
+    function shortint generate_expected_probe();
+        shortint unsigned x;
+
+        x = unsigned'(this.A) * 256;
+        x = x + unsigned'(this.F);
+
+        return x;
+    endfunction : generate_expected_probe
 endclass : gameboyprocessor
 
 

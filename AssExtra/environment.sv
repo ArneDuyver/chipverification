@@ -13,7 +13,7 @@ class environment;
 
   mailbox #(machinecode_instruction) gen2drv;
   mailbox #(machinecode_instruction) gen2che;
-  mailbox #(machinecode_instruction) mon2che;
+  mailbox #(transaction_mon) mon2che;
   mailbox #(byte) che2scb;
 
   virtual GB_iface ifc;
@@ -43,16 +43,16 @@ class environment;
   task rst_for_new_test();
     begin 
       machinecode_instruction instr;
+      transaction_mon trans_mon;
       byte b;
       this.drv.rst_iface();
       while (this.gen2drv.try_get(instr));
       while (this.gen2che.try_get(instr));
-      while (this.mon2che.try_get(instr));
+      while (this.mon2che.try_get(trans_mon));
       while (this.che2scb.try_get(b));
     end
   endtask : rst_for_new_test
 
-  //TODO: 3
   task run(int nrOfTests);
     fork
       begin  

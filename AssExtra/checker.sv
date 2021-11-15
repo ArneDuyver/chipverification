@@ -1,15 +1,15 @@
 `ifndef DEF_CHE
 `define DEF_CHE
-`include "transaction.sv"
+`include "machinecode_instruction.sv"
 `include "transaction_mon.sv"
 
 class checkers;
 
-  mailbox #(transaction) gen2che;
+  mailbox #(machinecode_instruction) gen2che;
   mailbox #(transaction_mon) mon2che;
   mailbox #(byte) che2scb;
 
-  function new(mailbox #(transaction) g2c, mailbox #(transaction_mon) m2c, mailbox #(byte) c2s);
+  function new(mailbox #(machinecode_instruction) g2c, mailbox #(transaction_mon) m2c, mailbox #(byte) c2s);
     this.gen2che = g2c;
     this.mon2che = m2c;
     this.che2scb = c2s;

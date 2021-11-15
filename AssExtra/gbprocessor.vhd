@@ -1,9 +1,9 @@
 --------------------------------------------------------------------------------
 -- KU Leuven - ESAT/COSIC- Embedded Systems & Security
 --------------------------------------------------------------------------------
--- Module Name:     gbprocessor - Behavioral
+-- Module Name:     registerfile - Behavioral
 -- Project Name:    CD and Verif
--- Description:     The gbprocessor DUT of the GameBoy
+-- Description:     The registerfile of the GameBoy
 --
 -- Revision     Date       Author     Comments
 -- v0.1         20211022   VlJo       Initial version
@@ -76,13 +76,13 @@ begin
     PMUX_B: process(operand_selection, regA, regB, regC, regD, regE, regH, regL)
     begin
         case operand_selection is
-        begin
             when "000" => alu_B <= regB;
             when "001" => alu_B <= regC;
             when "010" => alu_B <= regD;
             when "011" => alu_B <= regE;
             when "100" => alu_B <= regH;
             when "101" => alu_B <= regL;
+            when "110" => alu_B <= x"00";
             when others => alu_B <= regA;
         end case;
     end process;
@@ -129,5 +129,6 @@ begin
             end if;
         end if;
     end process;
+
 
 end Behavioural;
