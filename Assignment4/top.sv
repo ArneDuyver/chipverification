@@ -30,13 +30,15 @@ module top;
 
 
   //Covergroups
-  covergroup cg1 @(posedge clock);
-    c1: coverpoint ifc.instruction{
-      bins only_200_255 = { [200:$] };
+  covergroup cover_group @(posedge clock);
+    option.at_least = 100;
+    cover_point: coverpoint ifc.instruction
+    iff(theInterface.valid) {
+      bins bin_only_200_255 = { [200:$] };
     }
   endgroup
 
-  cg1 cg1_inst = new;
+  cover_group cover_group_inst = new;
 
 endmodule : top
 `endif
