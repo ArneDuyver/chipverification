@@ -33,7 +33,7 @@ module top;
   covergroup cover_group @(posedge clock);
     option.at_least = 1;
     cover_point: coverpoint ifc.instruction
-    //iff(ifc.valid) 
+    iff(ifc.valid) 
     {
       bins bin_only_a0 = { 160 };
     }
