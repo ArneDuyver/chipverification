@@ -23,17 +23,19 @@ class monitor;
 
     forever begin
       @(posedge this.ifc.clock);
-      regA_prev = regA;
-      flags_prev = flags;
-      prev_valid = valid;
+      
       regA = this.ifc.probe[15:8];
       flags = this.ifc.probe[7:0];
       valid = this.ifc.valid
       
       if (prev_valid) begin
-        trans_mon = new(regA_prev, flags_prev);
+        trans_mon = new(regA, flags);
         this.mon2che.put(trans_mon);
       end
+
+      regA_prev = regA;
+      flags_prev = flags;
+      prev_valid = valid;
     end /* forever */
 
   endtask : run
