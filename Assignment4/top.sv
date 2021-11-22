@@ -31,7 +31,7 @@ module top;
 
   //Covergroups
   covergroup cover_group @(posedge clock);
-    option.at_least = 1;
+    option.at_least = 2;
     cover_point: coverpoint ifc.instruction
     iff(ifc.valid) 
     {
