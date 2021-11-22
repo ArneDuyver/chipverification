@@ -26,7 +26,7 @@ class monitor;
       
       regA = this.ifc.probe[15:8];
       flags = this.ifc.probe[7:0];
-      valid = this.ifc.valid
+      valid = this.ifc.valid;
       
       if (prev_valid) begin
         trans_mon = new(regA, flags);
