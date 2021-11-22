@@ -17,8 +17,8 @@ class generator;
 
     forever begin
       instr = new(8'b0); //Send a non valid ALU instruction if no randomization is enabled
-      instr.rand_ALU_instruction.constraint_mode(1);
-      instr.test_instruction.constraint_mode(0);
+      instr.rand_ALU_instruction.constraint_mode(0);
+      instr.test_instruction.constraint_mode(1);
       void'(instr.randomize());
       this.gen2drv.put(instr);
       this.gen2che.put(instr);
