@@ -4,8 +4,6 @@ class scoreboard;
 
   mailbox #(byte) che2scb;
 
-  int NO_tests;
-
   int no_tests_done;
   int no_tests_ok;
   int no_tests_nok;
@@ -18,12 +16,10 @@ class scoreboard;
     no_tests_nok = 0;
   endfunction : new
 
-  //FIXME
-  task run(int NOT);
+  task run();
     byte result;
     int coverage;
     coverage = 0;
-    this.NO_tests += NOT;
 
     while (coverage != 100) begin
       this.che2scb.get(result);

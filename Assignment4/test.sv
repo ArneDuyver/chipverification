@@ -9,7 +9,7 @@ module test (GB_iface ifc);
   initial
   begin
     env.rst_for_new_test();
-    env.run(50);// FIXME
+    env.run();
     env.showReport();
     $finish;
   end
