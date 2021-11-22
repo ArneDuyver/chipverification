@@ -33,7 +33,7 @@ module top;
   covergroup cover_group @(posedge clock);
     option.at_least = 100;
     cover_point: coverpoint ifc.instruction
-    iff(theInterface.valid) {
+    iff(ifc.valid) {
       bins bin_only_200_255 = { [200:$] };
     }
   endgroup
