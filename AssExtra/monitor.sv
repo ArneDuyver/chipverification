@@ -15,19 +15,25 @@ class monitor;
 
   task run();
     transaction_mon trans_mon;
-    byte regA, flags;
-    bit prev_valid;
+    byte regA, flags,regA_prev,flags_prev;
+    bit prev_valid,valid;
     prev_valid = 0;
+    regA = 0;
+    flags = 0;
 
     forever begin
-      @(negedge this.ifc.clock);
+      @(posedge this.ifc.clock);
+      regA_prev = regA;
+      flags_prev = flags;
+      prev_valid = valid;
+      regA = this.ifc.probe[15:8];
+      flags = this.ifc.probe[7:0];
+      valid = this.ifc.valid
+      
       if (prev_valid) begin
-        regA = this.ifc.probe[15:8];
-        flags = this.ifc.probe[7:0];
-        trans_mon = new(regA, flags);
+        trans_mon = new(regA_prev, flags_prev);
         this.mon2che.put(trans_mon);
       end
-      prev_valid = this.ifc.valid;
     end /* forever */
 
   endtask : run

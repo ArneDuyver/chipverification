@@ -18,10 +18,9 @@ class driver;
 
     forever begin 
       this.gen2drv.get(instr);
-      @(posedge this.ifc.clock);
+      @(negedge this.ifc.clock);
       //this.ifc.reset <= 0; //Is this neccessary? I dont think so
       this.ifc.valid <= 1;
-      @(negedge this.ifc.clock);
       this.ifc.instruction <= instr.instruction;
     end /* forever */        
   endtask : run
