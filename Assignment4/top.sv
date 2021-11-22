@@ -4,7 +4,8 @@
 `include "GB_iface.sv"
 `include "test.sv"
 
-module top;
+module top; 
+  
   logic clock=0;
 
   // clock generation - 100 MHz
@@ -26,6 +27,14 @@ module top;
 
   // SV testing 
   test tst(ifc);
+
+
+  //Covergroups
+  covergroup cg1 @(posedge clock);
+    c1: coverpoint ifc.instruction;
+  endgroup
+
+  cg1 cg1_inst = new;
 
 endmodule : top
 `endif
