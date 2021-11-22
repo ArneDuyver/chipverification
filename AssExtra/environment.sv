@@ -39,19 +39,18 @@ class environment;
     this.drv = new(ifc, this.gen2drv);
     this.mon = new(ifc, this.mon2che);
 
-    this.check = new(this.gen2che,this.mon2che,this.che2scb);
+    this.check = new(this.gen2che,this.mon2che,this.che2scb,this.gb_model);
     this.scb = new(this.che2scb);
 
   endfunction : new
 
   task rst_for_new_test();
     begin 
-      gameboyprocessor new_model;
-      new_model = new();
-      this.gb_model = new_model;
       machinecode_instruction instr;
       transaction_mon trans_mon;
       byte b;
+
+      this.gb_model = new();
       this.drv.rst_iface();
       while (this.gen2drv.try_get(instr));
       while (this.gen2che.try_get(instr));
