@@ -8,6 +8,7 @@
 `include "checker.sv"
 `include "scoreboard.sv"
 `include "GB_iface.sv"
+`include "gbModel.sv"
 
 class environment;
 
@@ -23,8 +24,11 @@ class environment;
   monitor mon;
   checkers check;
   scoreboard scb;
+  gameboyprocessor gb_model;
 
   function new(virtual GB_iface ifc);
+    this.gb_model = new();
+    
     this.ifc = ifc;
     this.gen2drv = new(5);
     this.gen2che = new(5);
@@ -42,6 +46,9 @@ class environment;
 
   task rst_for_new_test();
     begin 
+      gameboyprocessor new_model;
+      new_model = new();
+      this.gb_model = new_model;
       machinecode_instruction instr;
       transaction_mon trans_mon;
       byte b;

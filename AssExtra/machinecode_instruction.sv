@@ -9,7 +9,7 @@ class machinecode_instruction;
 
   constraint rand_ALU_instruction { 
     //Make the instruction an ALU instruction
-    instruction[7:6] = 2'b10;
+    instruction[7:6] == 2'b10;
     //Choose the ALU opcode between valid values. From 0 to and with 7 are valid opcodes for the ALU
     instruction[5:3] inside {[3'b000 : 3'b111]};
     //Choose the operand between valid values (5:0). For all other values 2nd operand is regA so maybe add 6 for that case
@@ -18,8 +18,7 @@ class machinecode_instruction;
   
   constraint test_instruction { 
     //Make the instruction an ALU instruction
-    instruction[7:6] = 8'h83;
+    instruction[7:6] == 8'h83;
   }
-
-
+endclass : machinecode_instruction
 `endif
