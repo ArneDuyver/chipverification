@@ -34,7 +34,7 @@ module top;
     option.at_least = 100;
     cover_point: coverpoint ifc.instruction
     iff(ifc.valid) {
-      bins bin_only_200_255 = { [200:$] };
+      bins bin_only_a0 = { 8'ha0 };
     }
   endgroup
 
