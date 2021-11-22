@@ -1,5 +1,5 @@
 vsim -c -voptargs="+acc" top
-run 200ns
+run 20ns
 # run -all
 
 
