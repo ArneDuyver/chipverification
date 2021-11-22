@@ -31,7 +31,8 @@ class scoreboard;
       if (result > 0)
       begin 
         no_tests_ok++; 
-        $display("Total coverage %e",$get_coverage());
+        $display("Total coverage %d",$get_coverage());
+        if($get_coverage() == 100) $display("THE END");
         //$display("[SCB] successful test registered (^_^)");
       end else begin
         no_tests_nok++;
