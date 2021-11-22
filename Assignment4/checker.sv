@@ -30,10 +30,9 @@ class checkers;
     forever begin 
       this.mon2che.get(received_result);
       this.gen2che.get(instr);
-      //Steekproeven om de correctheid van de testen aan te tonen
-      
+            
       gb_model.executeALUInstruction(instr.instruction);
-      //$display("[CHE] Instruction was %h", instr.instruction);
+      $display("[CHE] Instruction was %h", instr.instruction);
       if (gb_model.A == received_result.regA)
       begin
         if (gb_model.F == received_result.flags)
