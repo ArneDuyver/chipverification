@@ -11,6 +11,9 @@ module test (GB_iface ifc);
     env.rst_for_new_test();
     env.run(50);
     env.showReport();
+    env.rst_for_new_test();
+    env.run(50);
+    env.showReport();
   end
 
 endmodule : test
