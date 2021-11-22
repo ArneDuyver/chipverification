@@ -1,11 +1,10 @@
 `ifndef DEF_MACHCODE
 `define DEF_MACHCODE
 
+
+
 class machinecode_instruction;
   rand byte instruction;
-  function new(byte given_instruction);
-    this.instruction = given_instruction;
-  endfunction : new
 
   constraint rand_ALU_instruction { 
     //Make the instruction an ALU instruction
@@ -20,5 +19,10 @@ class machinecode_instruction;
     //Make the instruction an ALU instruction
     instruction[7:6] == 8'h83;
   }
+
+  function new(byte given_instruction);
+    this.instruction = given_instruction;
+  endfunction : new
+
 endclass : machinecode_instruction
 `endif
