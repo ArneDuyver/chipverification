@@ -19,6 +19,10 @@ class checkers;
     
   endfunction : new
 
+  task rst_model(gameboyprocessor new_model);
+    this.gb_model = new_model;
+  endtask
+
   task run; 
     transaction_mon received_result;
     machinecode_instruction instr;
@@ -29,7 +33,7 @@ class checkers;
       //Steekproeven om de correctheid van de testen aan te tonen
       
       gb_model.executeALUInstruction(instr.instruction);
-      $display("[CHE] Instruction was %h", instr.instruction);
+      //$display("[CHE] Instruction was %h", instr.instruction);
       if (gb_model.A == received_result.regA)
       begin
         if (gb_model.F == received_result.flags)

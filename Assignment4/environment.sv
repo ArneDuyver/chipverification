@@ -51,6 +51,7 @@ class environment;
       byte b;
 
       this.gb_model = new();
+      this.check.rst_model(gb_model);
       this.drv.rst_iface();
       while (this.gen2drv.try_get(instr));
       while (this.gen2che.try_get(instr));
