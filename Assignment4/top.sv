@@ -31,7 +31,7 @@ module top;
 
   //Covergroups
   covergroup cover_group @(posedge clock);
-    option.at_least = 5; //TODO change to 100
+    option.at_least = 100;
     cover_point_instruction: coverpoint ifc.instruction[5:3]
       iff(ifc.valid) 
       {
