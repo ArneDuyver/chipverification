@@ -39,7 +39,7 @@ module top;
         bins SBC = { 3 };
         bins CP = { 7 };
       }
-    cover_point_carryFlag: coverpoint ifc.probe[0]
+    cover_point_carryFlag: coverpoint ifc.probe[4]
       iff(ifc.valid) 
       {
         bins carry_flag = { 1 };
