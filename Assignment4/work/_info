@@ -14,7 +14,7 @@ Ealu
 Z1 w1636990041
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 193
+!i122 231
 Z4 dC:/Git/IIW/LaboChip/AssExtra
 Z5 8alu.vhd
 Z6 Falu.vhd
@@ -24,9 +24,9 @@ VQz:XBjGYm?CPO8F5i^?KO1
 !s100 ]`ECcUN]c29^OIXRQi1;53
 Z8 OV;C;2020.1;71
 32
-Z9 !s110 1637580701
+Z9 !s110 1637593813
 !i10b 1
-Z10 !s108 1637580701.000000
+Z10 !s108 1637593812.000000
 Z11 !s90 alu.vhd|gbprocessor.vhd|
 Z12 !s107 gbprocessor.vhd|alu.vhd|
 !i113 1
@@ -35,7 +35,7 @@ Abehavioural
 R2
 R3
 DEx4 work 3 alu 0 22 Qz:XBjGYm?CPO8F5i^?KO1
-!i122 193
+!i122 231
 l38
 L27 109
 V`7G_gGYoU0NYC3UU>^MJe3
@@ -79,92 +79,92 @@ Z25 tCvgOpt 0
 n@a@l@u_iface
 Xchecker_sv_unit
 R15
-!s110 1637581034
-V?DgPgYjgeDBA0ID@YLW:83
+Z26 !s110 1637593916
+VS3=mF82:mjejBY]ggKYVc2
 r1
 !s85 0
 !i10b 1
-!s100 b3PU7dOWa3e31Tbz]?cUD0
-I?DgPgYjgeDBA0ID@YLW:83
+!s100 gg^EKZVA>WbXFXVgTmDH10
+IS3=mF82:mjejBY]ggKYVc2
 !i103 1
 S1
 R4
-w1637581031
+w1637590600
 8checker.sv
-Z26 Fchecker.sv
-Z27 Fmachinecode_instruction.sv
-Z28 Ftransaction_mon.sv
-Z29 FgbModel.sv
-!i122 203
-Z30 L0 4 0
+Z27 Fchecker.sv
+Z28 Fmachinecode_instruction.sv
+Z29 Ftransaction_mon.sv
+Z30 FgbModel.sv
+!i122 239
+Z31 L0 6 0
 R21
 31
-!s108 1637581034.000000
-!s107 gbModel.sv|transaction_mon.sv|machinecode_instruction.sv|checker.sv|
-!s90 -sv|checker.sv|
+Z32 !s108 1637593916.000000
+!s107 gbModel.sv|top.sv|test.sv|environment.sv|monitor.sv|scoreboard.sv|checker.sv|driver.sv|generator.sv|machinecode_instruction.sv|transaction_mon.sv|GB_iface.sv|
+Z33 !s90 -sv|GB_iface.sv|transaction_mon.sv|machinecode_instruction.sv|generator.sv|driver.sv|checker.sv|scoreboard.sv|monitor.sv|environment.sv|test.sv|top.sv|
 !i113 1
 o-sv
 R25
 Xdriver_sv_unit
-Z31 !s115 GB_iface
+Z34 !s115 GB_iface
 R15
-!s110 1637580883
-VAgmPOo^1IIGOd8^;CYdMo0
+R26
+VCQ=G5Tng]mk8@LD30h?zK2
 r1
 !s85 0
 !i10b 1
-!s100 Ud4:jX[MYQ>L0j>TXH^b<2
-IAgmPOo^1IIGOd8^;CYdMo0
+!s100 Ad^k:C;S7]8_YBCE1[YTf0
+ICQ=G5Tng]mk8@LD30h?zK2
 !i103 1
 S1
 R4
-Z32 w1637580848
+w1637592718
 8driver.sv
-Z33 Fdriver.sv
-Z34 FGB_iface.sv
-R27
-!i122 199
-R30
+Z35 Fdriver.sv
+Z36 FGB_iface.sv
+R28
+!i122 239
+R31
 R21
 31
-!s108 1637580883.000000
-!s107 machinecode_instruction.sv|GB_iface.sv|driver.sv|
-!s90 -sv|driver.sv|
+R32
+Z37 !s107 gbModel.sv|top.sv|test.sv|environment.sv|monitor.sv|scoreboard.sv|checker.sv|driver.sv|generator.sv|machinecode_instruction.sv|transaction_mon.sv|GB_iface.sv|
+R33
 !i113 1
 o-sv
 R25
 Xenvironment_sv_unit
-R31
+R34
 R15
-!s110 1637586497
-V^oedcQC^I`cFJe:jRConJ2
+R26
+V7aCS7j4@dS]V6o2L<LmX91
 r1
 !s85 0
 !i10b 1
-!s100 EhT:Y48<O2e8oiW^E2:R]2
-I^oedcQC^I`cFJe:jRConJ2
+!s100 o`mM5Q>ggZ1b;b]H>4JZ40
+I7aCS7j4@dS]V6o2L<LmX91
 !i103 1
 S1
 R4
-w1637586495
+Z38 w1637593910
 8environment.sv
-Z35 Fenvironment.sv
-R27
-Z36 Fgenerator.sv
-R33
-R34
-Z37 Fmonitor.sv
+Z39 Fenvironment.sv
 R28
-R26
+Z40 Fgenerator.sv
+R35
+R36
+Z41 Fmonitor.sv
 R29
-Z38 Fscoreboard.sv
-!i122 223
+R27
 R30
+Z42 Fscoreboard.sv
+!i122 239
+R31
 R21
 31
-!s108 1637586497.000000
-!s107 scoreboard.sv|gbModel.sv|checker.sv|transaction_mon.sv|monitor.sv|GB_iface.sv|driver.sv|generator.sv|machinecode_instruction.sv|environment.sv|
-!s90 -sv|environment.sv|
+R32
+R37
+R33
 !i113 1
 o-sv
 R25
@@ -184,7 +184,7 @@ w1633949708
 8exercise1.sv
 Fexercise1.sv
 !i122 135
-R30
+L0 4 0
 R21
 31
 !s108 1633949719.000000
@@ -195,9 +195,9 @@ o-sv
 R25
 YGB_iface
 R14
-Z39 DXx4 work 11 top_sv_unit 0 22 XJ17OG7mzeYmC:>b]BaF_2
+Z43 DXx4 work 11 top_sv_unit 0 22 d>fcbb?gCV4m9X0c:lIj]3
 R15
-Z40 !s110 1637586528
+Z44 !s110 1637593917
 !i10b 1
 !s100 jHl0zgj3e_M6UaGoQJdId2
 R17
@@ -207,54 +207,54 @@ S1
 R4
 w1636985285
 8GB_iface.sv
-R34
-!i122 225
+R36
+!i122 239
 R20
 R21
 r1
 !s85 0
 31
-Z41 !s108 1637586528.000000
-Z42 !s107 scoreboard.sv|gbModel.sv|checker.sv|transaction_mon.sv|monitor.sv|driver.sv|generator.sv|machinecode_instruction.sv|environment.sv|test.sv|GB_iface.sv|top.sv|
-Z43 !s90 -sv|top.sv|
+R32
+R37
+R33
 !i113 1
 o-sv
 R25
 n@g@b_iface
 XgbModel_sv_unit
 R15
-Z44 !s110 1637588023
-V3[S@:C<DJZJD?z0WGTmYJ2
+!s110 1637593818
+V8a62YU:YSi23<8QE472?00
 r1
 !s85 0
 !i10b 1
-!s100 bmeLYHg^;FEQg?dozO4<93
-I3[S@:C<DJZJD?z0WGTmYJ2
+!s100 P>Zii9oa^^@beN_jiRJb61
+I8a62YU:YSi23<8QE472?00
 !i103 1
 S1
 R4
-Z45 w1636990072
+Z45 w1637588143
 Z46 8gbModel.sv
-R29
-!i122 227
+R30
+!i122 232
 L0 5 0
 R21
 31
-Z47 !s108 1637588022.000000
+!s108 1637593818.000000
 !s107 gbModel.sv|
-Z48 !s90 -sv|gbModel.sv|
+!s90 -sv|gbModel.sv|
 !i113 1
 o-sv
 R25
 ngb@model_sv_unit
 Egbprocessor
-Z49 w1636990060
+Z47 w1636990060
 R2
 R3
-!i122 193
+!i122 231
 R4
-Z50 8gbprocessor.vhd
-Z51 Fgbprocessor.vhd
+Z48 8gbprocessor.vhd
+Z49 Fgbprocessor.vhd
 l0
 R7
 V5m6A@7=6[B;jUR2GY;GNB0
@@ -272,7 +272,7 @@ Abehavioural
 R2
 R3
 DEx4 work 11 gbprocessor 0 22 5m6A@7=6[B;jUR2GY;GNB0
-!i122 193
+!i122 231
 l53
 L26 109
 VPckjGYWeTMcG?4Fj=<E3O1
@@ -288,200 +288,200 @@ R12
 R13
 Xgenerator_sv_unit
 R15
-!s110 1637580874
-VVA=LiZQ`CmCO2`::D7__T1
+R26
+VdhU3nIV;bZ3;GbZ`5f4@01
 r1
 !s85 0
 !i10b 1
-!s100 n6I=zc1L=<2]GHAbhg8N81
-IVA=LiZQ`CmCO2`::D7__T1
+!s100 jXJ_ial``n6]R2B2DEOS03
+IdhU3nIV;bZ3;GbZ`5f4@01
 !i103 1
 S1
 R4
-R32
+w1637590546
 8generator.sv
-R36
-R27
-!i122 198
-R30
+R40
+R28
+!i122 239
+R31
 R21
 31
-!s108 1637580874.000000
-!s107 machinecode_instruction.sv|generator.sv|
-!s90 -sv|generator.sv|
+R32
+R37
+R33
 !i113 1
 o-sv
 R25
 Xmachinecode_instruction_sv_unit
 R15
-!s110 1637580850
-V1NYBdG[[jAj@A7UJ>EJK32
+R26
+VEjMz;1TjJKF@d;>nY^E5F3
 r1
 !s85 0
 !i10b 1
-!s100 ok>]nLGkM=61U5zfl68ll2
-I1NYBdG[[jAj@A7UJ>EJK32
+!s100 Aen`32OJ;ZIWdn[I8;]mJ1
+IEjMz;1TjJKF@d;>nY^E5F3
 !i103 1
 S1
 R4
-R32
+w1637588544
 8machinecode_instruction.sv
-R27
-!i122 197
-R30
+R28
+!i122 239
+R31
 R21
 31
-!s108 1637580849.000000
-!s107 machinecode_instruction.sv|
-!s90 -sv|machinecode_instruction.sv|
+R32
+R37
+R33
 !i113 1
 o-sv
 R25
 Xmonitor_sv_unit
-R31
+R34
 R15
-!s110 1637581061
-V;khfNIl0nb^ca5M:m7m[]3
+R26
+VVUT>X>;fQU[J9JcMiT?b`1
 r1
 !s85 0
 !i10b 1
-!s100 ANlafQ@OE4?I5ShC[l[0^2
-I;khfNIl0nb^ca5M:m7m[]3
+!s100 0fNkmzWl>4bEZ^j9nmbJz3
+IVUT>X>;fQU[J9JcMiT?b`1
 !i103 1
 S1
 R4
-w1636989789
+R38
 8monitor.sv
-R37
-R34
-R28
-!i122 205
+R41
+R36
+R29
+!i122 239
 R20
 R21
 31
-!s108 1637581061.000000
-!s107 transaction_mon.sv|GB_iface.sv|monitor.sv|
-!s90 -sv|monitor.sv|
+R32
+R37
+R33
 !i113 1
 o-sv
 R25
 Xscoreboard_sv_unit
 R15
-!s110 1637581048
-V:mW>dE2_FU5z86]K>n7=b1
+R26
+VGKhOhJo_9;kfH]_Ol_T1_2
 r1
 !s85 0
 !i10b 1
-!s100 nH6X`?Pb_8YXOi56eDoG[2
-I:mW>dE2_FU5z86]K>n7=b1
+!s100 iDm0<Y_VmM2j:5oAHm2j`2
+IGKhOhJo_9;kfH]_Ol_T1_2
 !i103 1
 S1
 R4
-w1637580655
+w1637590099
 8scoreboard.sv
-R38
-!i122 204
+R42
+!i122 239
 R20
 R21
 31
-!s108 1637581048.000000
-!s107 scoreboard.sv|
-!s90 -sv|scoreboard.sv|
+R32
+R37
+R33
 !i113 1
 o-sv
 R25
 vtest
 R15
-R39
-R40
-R18
-r1
-!s85 0
-!i10b 1
-!s100 3@YL?b2ZleB:fTz3Z9]D42
-I58O7A7iV3i8RiJT`g][Sm1
-R14
-S1
-R4
-w1636887885
-Z52 8test.sv
-Z53 Ftest.sv
-!i122 225
-L0 6 11
-R21
-31
-R41
-R42
 R43
-!i113 1
-o-sv
-R25
-4test_cpumodel
-R15
-DXx4 work 15 gbModel_sv_unit 0 22 3[S@:C<DJZJD?z0WGTmYJ2
 R44
 R18
 r1
 !s85 0
 !i10b 1
-!s100 2ANjVNYHS=m<7HYH91>KP3
-Idd4Xze=<g@m9gT_=Hn5A32
-!s105 gbModel_sv_unit
+!s100 >8z;_;7UbVdb9nD_^_[X52
+I?lXE:I3aT[ABV;]D2<>0K1
+R14
+S1
+R4
+w1637590574
+Z50 8test.sv
+Z51 Ftest.sv
+!i122 239
+L0 6 15
+R21
+31
+R32
+R37
+R33
+!i113 1
+o-sv
+R25
+4test_cpumodel
+R15
+R43
+R44
+R18
+r1
+!s85 0
+!i10b 1
+!s100 >ziV3nOWmNAVgiVm:5X`G0
+Il2[PYlzmU1]oYW26C]ih90
+R14
 S1
 R4
 R45
 R46
-R29
-!i122 227
+R30
+!i122 239
 L0 140 0
 R21
 31
-R47
-Z54 !s107 gbModel.sv|
-R48
+R32
+R37
+R33
 !i113 1
 o-sv
 R25
 Xtest_sv_unit
-R31
+R34
 R15
-!s110 1637586525
-V[ei>D^9MN`F^WDKVW2Qz93
+R44
+VQ7:ion;C9c[QdY8?Ti2VH2
 r1
 !s85 0
 !i10b 1
-!s100 6>@EdM=2LkfzU5XnK_Q5Y0
-I[ei>D^9MN`F^WDKVW2Qz93
+!s100 ezPITf<]hK1LcF8jV]bQY3
+IQ7:ion;C9c[QdY8?Ti2VH2
 !i103 1
 S1
 R4
-Z55 w1637586514
-R52
-R53
-R34
-R35
-R27
-R36
-R33
-R37
-R28
-R26
-R29
 R38
-!i122 224
+R50
+R51
+R36
+R39
+R28
+R40
+R35
+R41
+R29
+R27
 R30
+R42
+!i122 239
+R31
 R21
 31
-!s108 1637586524.000000
-!s107 scoreboard.sv|gbModel.sv|checker.sv|transaction_mon.sv|monitor.sv|driver.sv|generator.sv|machinecode_instruction.sv|environment.sv|GB_iface.sv|test.sv|
-!s90 -sv|test.sv|
+R32
+R37
+R33
 !i113 1
 o-sv
 R25
 vtop
 R15
-R39
-R40
+R43
+R44
 R18
 r1
 !s85 0
@@ -491,78 +491,78 @@ Ih6A^^]__>c7=SQa:QMa<U0
 R14
 S1
 R4
-w1636887839
-Z56 8top.sv
-Z57 Ftop.sv
-!i122 225
+w1637587902
+Z52 8top.sv
+Z53 Ftop.sv
+!i122 239
 L0 7 24
 R21
 31
-R41
-R42
-R43
+R32
+R37
+R33
 !i113 1
 o-sv
 R25
 Xtop_sv_unit
-R31
+R34
 R15
-R40
-VXJ17OG7mzeYmC:>b]BaF_2
+R44
+Vd>fcbb?gCV4m9X0c:lIj]3
 r1
 !s85 0
 !i10b 1
-!s100 jFS6WEH?7P4Nngb_lSfT02
-IXJ17OG7mzeYmC:>b]BaF_2
+!s100 iAZ]VGRZ^@0PaUNm6054I1
+Id>fcbb?gCV4m9X0c:lIj]3
 !i103 1
 S1
 R4
-R55
-R56
-R57
-R34
-R53
-R35
-R27
-R36
-R33
-R37
-R28
-R26
-R29
 R38
-!i122 225
+R52
+R53
+R36
+R51
+R39
+R28
+R40
+R35
+R41
+R29
+R27
 R30
+R42
+!i122 239
+R31
 R21
 31
-R41
-R42
-R43
+R32
+R37
+R33
 !i113 1
 o-sv
 R25
 Xtransaction_mon_sv_unit
 R15
-!s110 1637580726
-VOMUEWm:L43DLXRBhU`?AG2
+R26
+VN=@:JT3RI6=BjVTk><;`M2
 r1
 !s85 0
 !i10b 1
-!s100 mQ7fPb8LhXB==8FPISQXU1
-IOMUEWm:L43DLXRBhU`?AG2
+!s100 ^V6RZ8;l?AUm5>S[^U>8F2
+IN=@:JT3RI6=BjVTk><;`M2
 !i103 1
 S1
 R4
 w1636989767
 8transaction_mon.sv
-R28
-!i122 196
+R29
+!i122 239
 R20
 R21
 31
-!s108 1637580726.000000
-!s107 transaction_mon.sv|
-!s90 -sv|transaction_mon.sv|
+R32
+R37
+R33
 !i113 1
 o-sv
 R25

@@ -1,4 +1,0 @@
-# init.do
-# invalid command name "init.do"
-# ambiguous command name "c": calcDefaultSignalModeValue capstats case cat catch cd cdbg cdbg_mode cdbg_wait_for_starting cdump chan change check check_svver_available check_viewer checkpoint checkpointDone checkpointError ciid class cleanupGui clock close clp cmdSplit code column2tok compare compareOptionsRule compareSetDefaults compile compileDialog concat config configExcludeCovUpdate configbody configure connect_to_kernel console cont context contextOf continue convertVlogExtId coroutine cover_save_create_ucdb coverage createSourceInfo create_rpc_server
-# wrong # args: should be "cd ?dirName?"

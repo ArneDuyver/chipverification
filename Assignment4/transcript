@@ -1,5 +1,103 @@
-# vsim -c test_cpumodel 
-# Start time: 14:33:07 on Nov 22,2021
-# Error loading design
-# End time: 14:33:07 on Nov 22,2021, Elapsed time: 0:00:00
+# do init.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:09:08 on Nov 22,2021
+# vcom alu.vhd gbprocessor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU
+# -- Compiling architecture Behavioural of ALU
+# -- Compiling entity gbprocessor
+# -- Compiling architecture Behavioural of gbprocessor
+# End time: 16:09:08 on Nov 22,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:09:08 on Nov 22,2021
+# vlog -sv gbModel.sv 
+# -- Compiling package gbModel_sv_unit
+# -- Compiling program test_cpumodel
+# 
+# Top level modules:
+# 	test_cpumodel
+# End time: 16:09:08 on Nov 22,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:09:09 on Nov 22,2021
+# vlog -sv GB_iface.sv transaction_mon.sv machinecode_instruction.sv generator.sv driver.sv checker.sv scoreboard.sv monitor.sv environment.sv test.sv top.sv 
+# -- Compiling interface GB_iface
+# -- Compiling package transaction_mon_sv_unit
+# -- Compiling package machinecode_instruction_sv_unit
+# -- Compiling package generator_sv_unit
+# ** Warning: ** while parsing file included at driver.sv(3)
+# ** at GB_iface.sv(3): (vlog-2275) Existing interface 'GB_iface' will be overwritten.
+# -- Compiling interface GB_iface
+# -- Compiling package driver_sv_unit
+# -- Compiling package checker_sv_unit
+# -- Compiling program test_cpumodel
+# -- Compiling package scoreboard_sv_unit
+# ** Warning: ** while parsing file included at monitor.sv(3)
+# ** at GB_iface.sv(3): (vlog-2275) Existing interface 'GB_iface' will be overwritten.
+# -- Compiling interface GB_iface
+# ** Error: (vlog-13069) monitor.sv(31): near "if": syntax error, unexpected if, expecting ';'.
+# ** Error: (vlog-13069) monitor.sv(39): near "end": syntax error, unexpected end.
+# ** Warning: ** while parsing file included at environment.sv(6)
+# ** while parsing file included at driver.sv(3)
+# ** at GB_iface.sv(3): (vlog-2275) Existing interface 'GB_iface' will be overwritten.
+# ** Error: ** while parsing file included at environment.sv(6)
+# ** while parsing file included at driver.sv(3)
+# ** at GB_iface.sv(3): Illegal use of 'automatic' for variable declaration (clock).
+# ** Error: ** while parsing file included at environment.sv(6)
+# ** while parsing file included at driver.sv(3)
+# ** at GB_iface.sv(4): Illegal use of 'automatic' for variable declaration (reset).
+# ** Error: ** while parsing file included at environment.sv(6)
+# ** at driver.sv(9): (vlog-2730) Undefined variable: 'machinecode_instruction'.
+# ** Error: (vlog-13069) ** while parsing file included at environment.sv(6)
+# ** at driver.sv(17): near ";": syntax error, unexpected ';', expecting '('.
+# ** Error: ** while parsing file included at environment.sv(7)
+# ** while parsing file included at monitor.sv(4)
+# ** at transaction_mon.sv(3): Typedef 'transaction_mon' multiply defined.
+# ** Error: ** while parsing file included at environment.sv(7)
+# ** at monitor.sv(6): Typedef 'monitor' multiply defined.
+# ** Error: (vlog-13069) ** while parsing file included at environment.sv(7)
+# ** at monitor.sv(31): near "if": syntax error, unexpected if, expecting ';'.
+# ** Error: (vlog-13069) ** while parsing file included at environment.sv(7)
+# ** at monitor.sv(39): near "end": syntax error, unexpected end.
+# ** Error: ** while parsing file included at environment.sv(8)
+# ** while parsing file included at checker.sv(5)
+# ** at gbModel.sv(21): Illegal declaration after the statement near line '5'.  Declarations must precede statements.  Look for stray semicolons.
+# ** Error: (vlog-13069) ** while parsing file included at environment.sv(8)
+# ** while parsing file included at checker.sv(5)
+# ** at gbModel.sv(30): near "endfunction": syntax error, unexpected endfunction, expecting endtask.
+# ** Error (suppressible): ** while parsing file included at environment.sv(8)
+# ** while parsing file included at checker.sv(5)
+# ** at gbModel.sv(38): (vlog-13163) End label 'toString' does not match task name on line 16.
+# ** Error (suppressible): ** while parsing file included at environment.sv(8)
+# ** while parsing file included at checker.sv(5)
+# ** at gbModel.sv(136): (vlog-13163) End label 'gameboyprocessor' does not match class name on line 6.
+# ** Warning: ** while parsing file included at environment.sv(8)
+# ** while parsing file included at checker.sv(5)
+# ** at gbModel.sv(140): (vlog-2275) Existing program 'test_cpumodel' will be overwritten.
+# ** Error: ** while parsing file included at environment.sv(8)
+# ** while parsing file included at checker.sv(5)
+# ** at gbModel.sv(141): (vlog-2294) The 'var' keyword is missing.
+# ** Error: (vlog-13069) ** while parsing file included at environment.sv(8)
+# ** while parsing file included at checker.sv(5)
+# ** at gbModel.sv(141): near "gbmodel": syntax error, unexpected IDENTIFIER, expecting ';' or ','.
+# ** Error: (vlog-13069) ** while parsing file included at environment.sv(8)
+# ** while parsing file included at checker.sv(5)
+# ** at test.sv(147): near "=": syntax error, unexpected '=', expecting ';'.
+# ** Warning: (vlog-13184) test.sv(161): The Verilog preprocessor found an `endif directive matched to an `if directive in a different file: gbModel.sv(141)
+# ** Error: ** while parsing file included at environment.sv(8)
+# ** at checker.sv(12): Invalid type 'gameboyprocessor'. Please check the type of the variable 'gb_model'.
+# ** Error: ** while parsing file included at environment.sv(8)
+# ** at checker.sv(14): (vlog-2400) Identifier ('gameboyprocessor') found where a type or type identifier is required.
+# ** Error: (vlog-13069) ** while parsing file included at environment.sv(8)
+# ** at checker.sv(14): near ")": syntax error, unexpected ')', expecting class.
+# End time: 16:09:09 on Nov 22,2021, Elapsed time: 0:00:00
+# Errors: 20, Warnings: 5
+# ** Error: C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./compile.do line 4
+# C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -sv GB_iface.sv transaction_mon.sv machinecode_instruction.sv generator.sv driver.sv checker.sv scoreboard.sv monitor.sv environment.sv test.sv t..."
