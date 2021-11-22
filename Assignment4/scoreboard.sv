@@ -21,9 +21,11 @@ class scoreboard;
 
   task run(int NOT);
     byte result;
+    int coverage;
+    coverage = 0;
     this.NO_tests += NOT;
 
-    while (this.no_tests_done < this.NO_tests) begin
+    while (coverage != 100) begin
       this.che2scb.get(result);
       //$display("[SCB] result = %d",result);
       no_tests_done++; 
@@ -31,14 +33,13 @@ class scoreboard;
       if (result > 0)
       begin 
         no_tests_ok++; 
-        $display("Total coverage %d",$get_coverage());
-        if($get_coverage() == 100) $display("THE END");
         //$display("[SCB] successful test registered (^_^)");
       end else begin
         no_tests_nok++;
         //$display("[SCB] unsuccessful test registered");
 
       end
+      coverage = $get_coverage();
     end /* while*/
   endtask : run
 
