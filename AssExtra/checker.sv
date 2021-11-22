@@ -33,6 +33,8 @@ class checkers;
       begin
         if (gb_model.F == received_result.flags)
         begin
+          $display("[CHE] succesful test, expected: regA %h, flags %h ",gb_model.A, gb_model.F);
+          $display("[CHE] succesful test, received: regA %h, flags %h ",received_result.regA, received_result.flags);
           this.che2scb.put(byte'(1));
         end else begin
           $display("[CHE] failed test, expected: regA %h, flags %h ",gb_model.A, gb_model.F);
