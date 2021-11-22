@@ -17,9 +17,9 @@ class generator;
 
     forever begin
       instr = new(8'b0); //Send a non valid ALU instruction if no randomization is enabled
-      instr.rand_ALU_instruction.constraint_mode(0); //Fully random instructions
+      instr.rand_ALU_instruction.constraint_mode(1);//TODO: make 0 //Fully random instructions
       instr.test_instruction.constraint_mode(0);
-      instr.ass4.constraint_mode(1); //Constraints to help get 100% coverage faster
+      instr.ass4.constraint_mode(0);//TODO: make 1 //Constraints to help get 100% coverage faster
       void'(instr.randomize());
       this.gen2drv.put(instr);
       this.gen2che.put(instr);
