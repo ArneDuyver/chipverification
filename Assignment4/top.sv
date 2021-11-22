@@ -32,8 +32,7 @@ module top;
   //Covergroups
   covergroup cg1 @(posedge clock);
     c1: coverpoint ifc.instruction{
-      bins low_half = { [0:127] };
-      bins high_half = { [128:$] };
+      bins only_200_255 = { [200:$] };
     }
   endgroup
 
