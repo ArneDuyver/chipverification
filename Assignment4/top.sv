@@ -31,7 +31,10 @@ module top;
 
   //Covergroups
   covergroup cg1 @(posedge clock);
-    c1: coverpoint ifc.instruction;
+    c1: coverpoint ifc.instruction{
+      bins low_half = { [0:127] };
+      bins high_half = { [128:$] };
+    }
   endgroup
 
   cg1 cg1_inst = new;
