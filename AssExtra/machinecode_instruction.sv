@@ -17,7 +17,7 @@ class machinecode_instruction;
   
   constraint test_instruction { 
     //Make the instruction an ALU instruction
-    instruction[7:6] == 8'h83;
+    instruction[7:0] == 8'h83;
   }
 
   function new(byte given_instruction);
