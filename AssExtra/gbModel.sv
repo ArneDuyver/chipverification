@@ -147,15 +147,19 @@ program test_cpumodel;
 
         /* show the initial values of the register file*/
         gbmodel.toString();
-
+        $display("######################################################");
         /* ADD  E => A = A + E => A = 0 + 4 = 4 */
         gbmodel.executeALUInstruction(8'h83);
-
+        
+        /* show the intermediate values of the register file*/
+        gbmodel.toString();
+        $display("######################################################");
         /* ADD  L => A = A + L => A = 4 + 6 = 10 = 0xA */
         gbmodel.executeALUInstruction(8'h85);
 
         /* show the final values of the register file*/
         gbmodel.toString();
+        $display("######################################################");
     end
   
 endprogram : test_cpumodel

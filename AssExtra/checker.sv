@@ -35,13 +35,13 @@ class checkers;
         begin
           this.che2scb.put(byte'(1));
         end else begin
-          $display("[CHE] failed test, expected: regA %h, falgs %h ",gb_model.A, gb_model.F);
-          $display("[CHE] failed test, received: regA %h, falgs %h ",received_result.regA, received_result.flags);
+          $display("[CHE] failed test, expected: regA %h, flags %h ",gb_model.A, gb_model.F);
+          $display("[CHE] failed test, received: regA %h, flags %h ",received_result.regA, received_result.flags);
           this.che2scb.put(byte'(0));
         end
       end else begin
-        $display("[CHE] failed test, expected: regA %h, falgs %h ",gb_model.A, gb_model.F);
-        $display("[CHE] failed test, received: regA %h, falgs %h ",received_result.regA, received_result.flags);
+        $display("[CHE] failed test, expected: regA %h, flags %h ",gb_model.A, gb_model.F);
+        $display("[CHE] failed test, received: regA %h, flags %h ",received_result.regA, received_result.flags);
         this.che2scb.put(byte'(0));
       end
     end
