@@ -19,6 +19,10 @@ class checkers;
     
   endfunction : new
 
+  task rst_model(gameboyprocessor new_model);
+    this.gb_model = new_model;
+  endtask
+
   task run; 
     transaction_mon received_result;
     machinecode_instruction instr;
