@@ -10,7 +10,6 @@ class scoreboard;
 
   function new(mailbox c2s);
     this.che2scb = c2s;
-    NO_tests = 0;
     no_tests_done = 0;
     no_tests_ok = 0;
     no_tests_nok = 0;
