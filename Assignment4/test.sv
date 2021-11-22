@@ -11,7 +11,7 @@ module test (GB_iface ifc);
     env.rst_for_new_test();
     env.run();
     env.showReport();
-    $finish;
+    $stop;//$finish;
   end
 
 endmodule : test
