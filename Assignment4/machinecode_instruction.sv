@@ -20,6 +20,15 @@ class machinecode_instruction;
     instruction[7:0] == 8'h83;
   }
 
+  constraint ass4 { 
+    //Make the instruction an ALU instruction
+    instruction[7:6] == 2'b10;
+    //Choose the ALU opcode between ADC,SUBC and CP
+    instruction[5:3] inside {3'b001, 3'b011,3'b111};
+    //Choose the operand between valid values (5:0). For all other values 2nd operand is regA so maybe add 6 for that case
+    instruction[2:0] inside {[3'b000 : 3'b110]};
+  }
+
   function new(byte given_instruction);
     this.instruction = given_instruction;
   endfunction : new

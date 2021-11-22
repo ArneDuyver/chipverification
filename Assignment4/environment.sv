@@ -60,7 +60,7 @@ class environment;
     end
   endtask : rst_for_new_test
 
-  task run(int nrOfTests);
+  task run(int nrOfTests);//FIXME 
     fork
       begin  
         fork 
@@ -72,7 +72,7 @@ class environment;
         //wait for some time
         repeat (10) @(posedge this.ifc.clock);
         fork
-          this.scb.run(nrOfTests);
+          this.scb.run(nrOfTests); //FIXME
         join_any
         //wait
         repeat (10) @(posedge this.ifc.clock);

@@ -18,7 +18,7 @@ class scoreboard;
     no_tests_nok = 0;
   endfunction : new
 
-
+  //FIXME
   task run(int NOT);
     byte result;
     int coverage;

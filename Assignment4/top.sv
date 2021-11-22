@@ -31,12 +31,22 @@ module top;
 
   //Covergroups
   covergroup cover_group @(posedge clock);
-    option.at_least = 3;
-    cover_point: coverpoint ifc.instruction
-    iff(ifc.valid) 
-    {
-      bins bin_only_a0 = { 160,176 };
-    }
+    option.at_least = 100;
+    cover_point_instruction: 
+      coverpoint ifc.instruction[5:3]
+      iff(ifc.valid) 
+      {
+        bins bin_ADC = { 1 };
+        bins bin_SBC = { 3 };
+        bins bin_CP = { 7 };
+      }
+    cover_point_carryFlag:
+      coverpoint ifc.probe[0]
+      iff(ifc.valid) 
+      {
+        bins bin_carry_flag = { 1 };
+      }
+
   endgroup
 
   cover_group cover_group_inst = new;
