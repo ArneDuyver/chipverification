@@ -51,7 +51,7 @@ module ahb_arbiter_wrapper (
     //Task 4: Lock of master needs to go up if a slave asks for it
     for (genvar i = 0; i < 16; i++ ) lock_master_high_after_slave_lock_high : assert
         property(@(posedge HCLK) 
-            (HLOCKx[i] |-> strong(##[0:$] HMASTLOCK)) 
+            (HLOCKx[i] |-> ##[0:$] HMASTLOCK) 
         ) $display("%m - pass - %t ns",$time); else $info("%m - Master lock did not go up after save");
     
 endmodule : ahb_arbiter_wrapper
