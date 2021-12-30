@@ -59,9 +59,9 @@ module ahb_arbiter_wrapper (
             (HLOCKx[i] |-> ##[0:$] HMASTLOCK) 
         ) else $info("%m - Master lock did not go up after save");
     //Task 6: request goes LOW after a ready was given to that master
-    for (genvar i = 0; i < 16; i++ ) grant_low_after_ready : assert
+    for (genvar i = 0; i < 16; i++ ) req_low_after_ready : assert
         property(@(posedge HCLK) 
             ((HREADY & HGRANTx[i]) |=> ~(HBUSREQx[i])) 
-        ) $display("%m - pass"); else $info("%m - Req didn't return to low after ready for that master was given");
+        ) else $info("%m - Req didn't return to low after ready for that master was given");
     
 endmodule : ahb_arbiter_wrapper
