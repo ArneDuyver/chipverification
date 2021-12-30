@@ -23,6 +23,7 @@ module ahb_arbiter_wrapper (
     //-- ASSERTIONS
     //-------------------------------------------------------------------------------
     
+    //Task 1
     int grant_ones;
     always @(posedge HCLK)
     begin
@@ -32,7 +33,20 @@ module ahb_arbiter_wrapper (
     always @(posedge HCLK)
     begin
         /* I assume that no more then 1 grant signal is active at a time */
-        max_one_grant: assert (~(grant_ones > 1)) $display("%m - %d pass", grant_ones); else $info("%m - %d  fail",grant_ones);
+        //max_one_grant: assert (~(grant_ones > 1)) $display("%m - number of grants: %b pass", grant_ones); else $info("%m - number of grants: %b  fail",grant_ones);
+        max_one_grant: assert (~(grant_ones > 1)); else $error("%m - number of grants: %b  fail",grant_ones);
     end
+
+    //Task 2
+    for (genvar i = 0; i < 16; i++ ) grant_always_given : assert 
+        property(@(posedge HCLK) 
+            (HBUSREQx[i] |-> strong(##[0:$] HGRANTx[i])); else $error("No grant given IDnr: %d", i);
+        ); 
+    //Task 3
+    for (genvar i = 0; i < 16; i++ ) grant_low_after_ready : assert
+        property(@(posedge HCLK) 
+            ((HREADY & HGRANTx[i]) |-> ~HGRANTx[i]); else $error("No grant didn't return to low after ready: %d", i);
+        ); 
+    
 
 endmodule : ahb_arbiter_wrapper

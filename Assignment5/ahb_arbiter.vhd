@@ -174,11 +174,6 @@ begin
 
 
     fsm_o_rot_pointer <= '1' when curState = sIdle and nxtState = sIdle else '0';
-    fsm_o_ld_lock <= not(fsm_o_rot_pointer);
-
-    -------------------------------------------------------------------------------
-    -- ASSERTIONS
-    -------------------------------------------------------------------------------
-    
+    fsm_o_ld_lock <= not(fsm_o_rot_pointer);    
     
 end Behavioural;
