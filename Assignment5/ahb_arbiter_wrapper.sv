@@ -29,10 +29,10 @@ module ahb_arbiter_wrapper (
         grant_ones = HGRANTx[0] + HGRANTx[1] + HGRANTx[2]+ HGRANTx[3]+ HGRANTx[4]+ HGRANTx[5]+ HGRANTx[6]+ HGRANTx[7]+ HGRANTx[8]+ HGRANTx[9]+ HGRANTx[10]+ HGRANTx[11]+ HGRANTx[12]+ HGRANTx[13]+ HGRANTx[14]+ HGRANTx[15];
     end
     /* I assume that no more then 1 grant signal is active at a time */
-    no_valid_with_reset_on_rose : assert 
+    max_one_grant : assert 
     property ( 
-        @(posedge HCLK)(~(grant_ones > 0))
-    );
+        @(posedge HCLK)(~(grant_ones > 1))
+    ); $display("%m pass"); else $info("%m fail");
 
 
 endmodule : ahb_arbiter_wrapper
