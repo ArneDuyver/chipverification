@@ -28,7 +28,7 @@ module ahb_arbiter_wrapper (
     always @(posedge HCLK)
     begin
         grant_ones = HGRANTx[0] + HGRANTx[1] + HGRANTx[2]+ HGRANTx[3]+ HGRANTx[4]+ HGRANTx[5]+ HGRANTx[6]+ HGRANTx[7]+ HGRANTx[8]+ HGRANTx[9]+ HGRANTx[10]+ HGRANTx[11]+ HGRANTx[12]+ HGRANTx[13]+ HGRANTx[14]+ HGRANTx[15];
-        $display("number of grants is %d",grant_ones)
+        $display("number of grants is %d",grant_ones);
     end
 
 endmodule : ahb_arbiter_wrapper
