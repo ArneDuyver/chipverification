@@ -40,12 +40,12 @@ module ahb_arbiter_wrapper (
     for (genvar i = 0; i < 16; i++ ) grant_always_given : assert 
         property(@(posedge HCLK) 
             (HBUSREQx[i] |-> strong(##[0:$] HGRANTx[i])) 
-        ) $display(""); else $info("No grant given IDnr: %d", i);
+        ) else $info("No grant given IDnr: %d", i);
     //Task 3
     for (genvar i = 0; i < 16; i++ ) grant_low_after_ready : assert
         property(@(posedge HCLK) 
             ((HREADY & HGRANTx[i]) |-> ~(HGRANTx[i])) 
-        ) $display("%m pass"); else $info("Grant didn't return to low after ready", $time);
+        ) else $info("Grant didn't return to low after ready", $time);
     
 
 endmodule : ahb_arbiter_wrapper
