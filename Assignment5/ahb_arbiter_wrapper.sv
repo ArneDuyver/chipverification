@@ -45,7 +45,8 @@ module ahb_arbiter_wrapper (
     for (genvar i = 0; i < 16; i++ ) grant_low_after_ready : assert
         property(@(posedge HCLK) 
             ((HREADY & HGRANTx[i]) |-> ~(HGRANTx[i])) 
-        ) %display("%m pass: \n\tREADY = %b, \n\tHGRANT = %b,\n\t~HGRANT = %b, \n\t & = %b", HREADY,(HGRANTx[i]),~(HGRANTx[i]),(HREADY & HGRANTx[i])); else $info("Grant didn't return to low after ready: \n\tREADY = %b, \n\tHGRANT = %b, \n\t~HGRANT = %b,  \n\t& = %b", HREADY,(HGRANTx[i]),~(HGRANTx[i]),(HREADY & HGRANTx[i]));
+        ) %display("%m pass: \n\tREADY = %b", HREADY); else $info("Grant didn't return to low after ready: \n\tREADY = %b", HREADY);
+        //%display("%m pass: \n\tREADY = %b, \n\tHGRANT = %b,\n\t~HGRANT = %b, \n\t & = %b", HREADY,(HGRANTx[i]),~(HGRANTx[i]),(HREADY & HGRANTx[i])); else $info("Grant didn't return to low after ready: \n\tREADY = %b, \n\tHGRANT = %b, \n\t~HGRANT = %b,  \n\t& = %b", HREADY,(HGRANTx[i]),~(HGRANTx[i]),(HREADY & HGRANTx[i]));
     
 
 endmodule : ahb_arbiter_wrapper
