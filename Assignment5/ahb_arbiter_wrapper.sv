@@ -45,8 +45,8 @@ module ahb_arbiter_wrapper (
     //Task 3
     for (genvar i = 0; i < 16; i++ ) grant_low_after_ready : assert
         property(@(posedge HCLK) 
-            ((HREADY & HGRANTx[i]) |-> ~HGRANTx[i]) 
-        ) $display("%m pass"); else $info("%t Grant didn't return to low after ready", $time);
+            ((HREADY & HGRANTx[i]) |-> ~(HGRANTx[i])) 
+        ) $display("%m pass"); else $info("Grant didn't return to low after ready", $time);
     
 
 endmodule : ahb_arbiter_wrapper
