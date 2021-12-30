@@ -31,8 +31,8 @@ module ahb_arbiter_wrapper (
     
     always @(posedge HCLK)
     begin
-    /* I assume that no more then 1 grant signal is active at a time */
-    max_one_grant: assert (~(grant_ones > 0)) $display("%m - %d pass", grant_ones); else $info("%m - %d  fail",grant_ones);
+        /* I assume that no more then 1 grant signal is active at a time */
+        max_one_grant: assert (~(grant_ones > 1)) $display("%m - %d pass", grant_ones); else $info("%m - %d  fail",grant_ones);
     end
 
 endmodule : ahb_arbiter_wrapper
