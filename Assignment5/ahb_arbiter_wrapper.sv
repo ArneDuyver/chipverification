@@ -48,10 +48,15 @@ module ahb_arbiter_wrapper (
             ((HREADY & HGRANTx[i]) |=> ~(HGRANTx[i])) 
         ) else $info("%m - Grant didn't return to low after ready");
     
-    //Task 4: Lock of master needs to go up if a slave asks for it
+    //Task 4: after reset all neccesary signals need to be low
+    ready_masterLock_low_after_rst: assert
+        property(@(posedge HCLK) 
+            (~HRESETn |=> (~(HMASTLOCK)&(~(HREADY)))) 
+        ) $display("%m - pass - %t ns",$time); else $info("%m - signals not low after reset");
+    //Task 5: Lock of master needs to go up if a slave asks for it
     for (genvar i = 0; i < 16; i++ ) lock_master_high_after_slave_lock_high : assert
         property(@(posedge HCLK) 
             (HLOCKx[i] |-> ##[0:$] HMASTLOCK) 
-        ) $display("%m - pass - %t ns",$time); else $info("%m - Master lock did not go up after save");
+        ) else $info("%m - Master lock did not go up after save");
     
 endmodule : ahb_arbiter_wrapper
