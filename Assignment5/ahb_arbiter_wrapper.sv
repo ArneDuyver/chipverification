@@ -34,7 +34,7 @@ module ahb_arbiter_wrapper (
     begin
         /* I assume that no more then 1 grant signal is active at a time */
         //max_one_grant: assert (~(grant_ones > 1)) $display("%m - number of grants: %b pass", grant_ones); else $info("%m - number of grants: %b  fail",grant_ones);
-        max_one_grant: assert (~(grant_ones > 1)); else $info("%m - number of grants: %b  fail",grant_ones);
+        max_one_grant: assert (~(grant_ones > 1)) $display("%m - number of grants: %b pass", grant_ones); else $info("%m - number of grants: %b  fail",grant_ones);
     end
 
     //Task 2
