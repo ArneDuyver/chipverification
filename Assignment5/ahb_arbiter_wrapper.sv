@@ -31,7 +31,7 @@ module ahb_arbiter_wrapper (
     /* I assume that no more then 1 grant signal is active at a time */
     no_valid_with_reset_on_rose : assert 
     property ( 
-        @(posedge clock)(~(grant_ones > 0))
+        @(posedge HCLK)(~(grant_ones > 0))
     );
 
 
