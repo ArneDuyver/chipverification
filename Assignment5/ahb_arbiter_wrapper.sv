@@ -32,7 +32,7 @@ module ahb_arbiter_wrapper (
     max_one_grant : assert 
     property ( 
         @(posedge HCLK)(~(grant_ones > 1))
-    ); $display("%m pass"); else $info("%m fail");
+    ) $display("%m pass"); else $info("%m fail");
 
 
 endmodule : ahb_arbiter_wrapper
